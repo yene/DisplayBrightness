@@ -53,10 +53,18 @@
 							  context:NULL]; 
 }
 
+- (void)menuWillOpen:(NSMenu *)menu
+{
+    [self willChangeValueForKey:@"value"];
+    value = [self getDisplayBrightness];
+    [self didChangeValueForKey:@"value"];
+}
+
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
 
 	[self setDisplayBrightness:value];
 }
+
 - (void) dealloc {
     //Releases the 2 images we loaded into memory
     [brightnessImage release];

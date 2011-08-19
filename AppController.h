@@ -12,7 +12,6 @@
 @interface AppController : NSObject {
 	IBOutlet NSMenu *brightnessMenu;
 	IBOutlet NSMenuItem *brightnessSliderItem;
-	IBOutlet NSMenuItem *brightnessLockItem;
 	NSStatusItem	*brightnessItem;
     NSImage			*brightnessImage;
 	NSImage			*brightnessImageHighlight;

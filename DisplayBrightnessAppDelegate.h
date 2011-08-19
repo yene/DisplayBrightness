@@ -10,7 +10,6 @@
 
 @interface DisplayBrightnessAppDelegate : NSObject <NSApplicationDelegate> {
     NSWindow *window;
-	IBOutlet NSMenu *brightnessMenu;
 }
 
 @property (assign) IBOutlet NSWindow *window;
