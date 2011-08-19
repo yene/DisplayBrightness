@@ -2,4 +2,4 @@ DisplayBrightness
 
 Control your Macbook display brightness from the Menubar
 
-![screenshot](screenshot.jpg)
+![screenshot](https://github.com/yene/DisplayBrightness/blob/master/screenshot.jpg)
