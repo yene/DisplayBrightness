@@ -14,6 +14,5 @@
 }
 
 @property (assign) IBOutlet NSWindow *window;
-- (IBAction)lockScreen:(id)sender;
 
 @end

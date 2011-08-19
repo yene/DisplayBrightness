@@ -51,19 +51,6 @@
 	[self addObserver:self forKeyPath:@"value"
 							  options:(NSKeyValueObservingOptionNew)
 							  context:NULL]; 
-	
-	
-	
-	//lock
-	size = NSMakeRect(0,0,30,20);
-	NSButton *lockButton = [[NSButton alloc] initWithFrame:size];
-	[lockButton setImage:[NSImage imageNamed:@"NSLockLockedTemplate"]];
-	[lockButton setBordered:NO];
-	[lockButton setTarget:self];
-	[lockButton setAction:@selector(lockScreen:)];
-	[brightnessLockItem setView:lockButton];
-	[lockButton release];
-	
 }
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
@@ -110,18 +97,6 @@
 	} else {
 		return 1.0;
 	}
-}
-- (void)lockScreen:(id)sender {
-	 // /System/Library/CoreServices/'Menu Extras'/User.menu/Contents/Resources/CGSession -suspend
-	NSTask *task = [[NSTask alloc] init];
-	[task setLaunchPath:@"/System/Library/CoreServices/Menu Extras/User.menu/Contents/Resources/CGSession"];
-	NSArray *args = [NSArray arrayWithObjects:@"-suspend", nil];
-	[task setArguments:args];
-	
-	// start process
-	[task launch];
-	[task waitUntilExit];
-	[task release];
 }
 
 @end

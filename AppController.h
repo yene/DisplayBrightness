@@ -19,7 +19,6 @@
 	float value;
 }
 
-- (void)lockScreen:(id)sender;
 - (float)getDisplayBrightness;
 - (void)setDisplayBrightness:(float)brightness;
 @end
