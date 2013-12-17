@@ -14,23 +14,48 @@
 #include <IOKit/graphics/IOGraphicsLib.h> 
 #include <ApplicationServices/ApplicationServices.h> 
 
+@implementation NSSlider (Scrollwheel)
+
+- (void)    scrollWheel:(NSEvent*) event
+{
+  float range = [self maxValue] - [self minValue];
+  float increment = (range * [event deltaY]) / 100;
+  float val = [self floatValue] + increment;
+  
+  BOOL wrapValue = ([[self cell] sliderType] == NSCircularSlider);
+  
+  if( wrapValue )
+  {
+    if ( val < [self minValue])
+      val = [self maxValue] - fabs(increment);
+    
+    if( val > [self maxValue])
+      val = [self minValue] + fabs(increment);
+  }
+  
+  [self setFloatValue:val];
+  [self sendAction:[self action] to:[self target]];
+}
+
+@end
+
 @implementation AppController
 - (void) awakeFromNib {
 	
 	//Create the NSStatusBar and set its length
-    brightnessItem = [[[NSStatusBar systemStatusBar] statusItemWithLength:NSSquareStatusItemLength] retain];
+  brightnessItem = [[[NSStatusBar systemStatusBar] statusItemWithLength:NSSquareStatusItemLength] retain];
   
-    //Used to detect where our files are
-    NSBundle *bundle = [NSBundle mainBundle];
+  //Used to detect where our files are
+  NSBundle *bundle = [NSBundle mainBundle];
     
-    //Allocates and loads the images into the application which will be used for our NSStatusItem
-    brightnessImage = [[NSImage alloc] initWithContentsOfFile:[bundle pathForResource:@"display_icon" ofType:@"png"]];
-    brightnessImageHighlight = [[NSImage alloc] initWithContentsOfFile:[bundle pathForResource:@"display_icon_white" ofType:@"png"]];
-    
-    //Sets the images in our NSStatusItem
-    [brightnessItem setImage:brightnessImage];
-    [brightnessItem setAlternateImage:brightnessImageHighlight];
-    
+  //Allocates and loads the images into the application which will be used for our NSStatusItem
+  brightnessImage = [[NSImage alloc] initWithContentsOfFile:[bundle pathForResource:@"display_icon" ofType:@"png"]];
+  brightnessImageHighlight = [[NSImage alloc] initWithContentsOfFile:[bundle pathForResource:@"display_icon_white" ofType:@"png"]];
+
+  //Sets the images in our NSStatusItem
+  [brightnessItem setImage:brightnessImage];
+  [brightnessItem setAlternateImage:brightnessImageHighlight];
+  
 	NSRect size = NSMakeRect(0,0,30,100);
 	NSSlider *brightnessSlider = [[NSSlider alloc] initWithFrame:size];
 	[brightnessSlider bind:@"value" toObject:self withKeyPath:@"value" options:nil];
@@ -41,12 +66,12 @@
 
 	[brightnessSliderItem setView:brightnessSlider];
 	[brightnessSlider release];
-    //Tells the NSStatusItem what menu to load
-    [brightnessItem setMenu:brightnessMenu];
-    //Sets the tooptip for our item
-    [brightnessItem setToolTip:@"DisplayBrightness Menu Item"];
-    //Enables highlighting
-    [brightnessItem setHighlightMode:YES];
+  //Tells the NSStatusItem what menu to load
+  [brightnessItem setMenu:brightnessMenu];
+  //Sets the tooptip for our item
+  [brightnessItem setToolTip:@"DisplayBrightness Menu Item"];
+  //Enables highlighting
+  [brightnessItem setHighlightMode:YES];
 	
 	[self addObserver:self forKeyPath:@"value"
 							  options:(NSKeyValueObservingOptionNew)
@@ -74,7 +99,6 @@
 
 
 - (void)setDisplayBrightness:(float)brightness {
-	CGDisplayErr      dErr;
 	io_service_t      service;
 	CGDirectDisplayID targetDisplay;
 	
@@ -84,7 +108,7 @@
 	service = CGDisplayIOServicePort(targetDisplay);
 	
 	if (brightness != HUGE_VALF) { // set the brightness, if requested
-		dErr = IODisplaySetFloatParameter(service, kNilOptions, key, brightness);
+		IODisplaySetFloatParameter(service, kNilOptions, key, brightness);
 	}
 }
 - (float)getDisplayBrightness {

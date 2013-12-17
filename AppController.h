@@ -13,7 +13,7 @@
 	IBOutlet NSMenu *brightnessMenu;
 	IBOutlet NSMenuItem *brightnessSliderItem;
 	NSStatusItem	*brightnessItem;
-    NSImage			*brightnessImage;
+  NSImage			*brightnessImage;
 	NSImage			*brightnessImageHighlight;
 	float value;
 }
