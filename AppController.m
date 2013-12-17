@@ -43,7 +43,7 @@
 - (void) awakeFromNib {
 	
 	//Create the NSStatusBar and set its length
-  brightnessItem = [[[NSStatusBar systemStatusBar] statusItemWithLength:NSSquareStatusItemLength] retain];
+  brightnessItem = [[NSStatusBar systemStatusBar] statusItemWithLength:NSSquareStatusItemLength];
   
   //Used to detect where our files are
   NSBundle *bundle = [NSBundle mainBundle];
@@ -56,7 +56,7 @@
   [brightnessItem setImage:brightnessImage];
   [brightnessItem setAlternateImage:brightnessImageHighlight];
   
-	NSRect size = NSMakeRect(0,0,30,100);
+	NSRect size = NSMakeRect(0,0,30,104);
 	NSSlider *brightnessSlider = [[NSSlider alloc] initWithFrame:size];
 	[brightnessSlider bind:@"value" toObject:self withKeyPath:@"value" options:nil];
 	[brightnessSlider setMaxValue:1.0];
@@ -65,7 +65,6 @@
 	[brightnessSlider setContinuous:YES];
 
 	[brightnessSliderItem setView:brightnessSlider];
-	[brightnessSlider release];
   //Tells the NSStatusItem what menu to load
   [brightnessItem setMenu:brightnessMenu];
   //Sets the tooptip for our item
@@ -90,12 +89,6 @@
 	[self setDisplayBrightness:value];
 }
 
-- (void) dealloc {
-    //Releases the 2 images we loaded into memory
-    [brightnessImage release];
-	[brightnessImageHighlight release];
-    [super dealloc];
-}
 
 
 - (void)setDisplayBrightness:(float)brightness {
