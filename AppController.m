@@ -60,7 +60,7 @@
 	NSSlider *brightnessSlider = [[NSSlider alloc] initWithFrame:size];
 	[brightnessSlider bind:@"value" toObject:self withKeyPath:@"value" options:nil];
 	[brightnessSlider setMaxValue:1.0];
-	[brightnessSlider setMinValue:0.0];
+	[brightnessSlider setMinValue:0.01];
 	[brightnessSlider setFloatValue:[self getDisplayBrightness]];
 	[brightnessSlider setContinuous:YES];
 
