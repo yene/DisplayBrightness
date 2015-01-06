@@ -92,36 +92,50 @@
 
 
 - (void)setDisplayBrightness:(float)brightness {
-	io_service_t      service;
-	CGDirectDisplayID targetDisplay;
-	
-	CFStringRef key = CFSTR(kIODisplayBrightnessKey);
-	
-	targetDisplay = CGMainDisplayID();
-	service = CGDisplayIOServicePort(targetDisplay);
-	
-	if (brightness != HUGE_VALF) { // set the brightness, if requested
-		IODisplaySetFloatParameter(service, kNilOptions, key, brightness);
-	}
+  io_service_t      service;
+  CGDirectDisplayID targetDisplay;
+  
+  CFStringRef key = CFSTR(kIODisplayBrightnessKey);
+  
+  targetDisplay = [self currentDisplay];
+  service = CGDisplayIOServicePort(targetDisplay);
+  
+  if (brightness != HUGE_VALF) { // set the brightness, if requested
+    IODisplaySetFloatParameter(service, kNilOptions, key, brightness);
+  }
 }
+
+- (CGDirectDisplayID)currentDisplay{
+  NSPoint mouseLocation = [NSEvent mouseLocation];
+  CGDirectDisplayID dspys;
+  uint32_t dspyCnt;
+  CGError dErr = CGGetDisplaysWithPoint(mouseLocation, 1, &dspys, &dspyCnt);
+  if (dErr == kCGErrorSuccess) {
+    return dspys;
+  } else {
+    return CGMainDisplayID();
+  }
+}
+
 - (float)getDisplayBrightness {
-	CGDisplayErr      dErr;
-	io_service_t      service;
-	CGDirectDisplayID targetDisplay;
-	
-	CFStringRef key = CFSTR(kIODisplayBrightnessKey);
-	
-	targetDisplay = CGMainDisplayID();
-	service = CGDisplayIOServicePort(targetDisplay);
-	
-	float brightness = 1.0;
-	dErr = IODisplayGetFloatParameter(service, kNilOptions, key, &brightness);
-	
-	if (dErr == kIOReturnSuccess) {
-		return brightness;
-	} else {
-		return 1.0;
-	}
+  [self currentDisplay];
+  CGDisplayErr      dErr;
+  io_service_t      service;
+  CGDirectDisplayID targetDisplay;
+  
+  CFStringRef key = CFSTR(kIODisplayBrightnessKey);
+  targetDisplay = [self currentDisplay];
+  service = CGDisplayIOServicePort(targetDisplay);
+  
+  float brightness = 1.0;
+  dErr = IODisplayGetFloatParameter(service, kNilOptions, key, &brightness);
+  
+  if (dErr == kIOReturnSuccess) {
+    return brightness;
+  } else {
+    // TODO disable the slider for this screen
+    return 1.0;
+  }
 }
 
 @end
