@@ -17,7 +17,6 @@
 		AE56263010D7B4ED00AF143D /* display_icon_white.png in Resources */ = {isa = PBXBuildFile; fileRef = AE56262D10D7B4ED00AF143D /* display_icon_white.png */; };
 		AE56263110D7B4ED00AF143D /* display_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = AE56262E10D7B4ED00AF143D /* display_icon.png */; };
 		AE56263210D7B4ED00AF143D /* brightness_icon.icns in Resources */ = {isa = PBXBuildFile; fileRef = AE56262F10D7B4ED00AF143D /* brightness_icon.icns */; };
-		AEFA27FB13FE8ED20001A333 /* README.markdown in Resources */ = {isa = PBXBuildFile; fileRef = AEFA27FA13FE8ED20001A333 /* README.markdown */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -197,7 +196,6 @@
 				AE56263010D7B4ED00AF143D /* display_icon_white.png in Resources */,
 				AE56263110D7B4ED00AF143D /* display_icon.png in Resources */,
 				AE56263210D7B4ED00AF143D /* brightness_icon.icns in Resources */,
-				AEFA27FB13FE8ED20001A333 /* README.markdown in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
