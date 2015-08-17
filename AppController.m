@@ -38,7 +38,27 @@
 
 @implementation AppController
 - (void) awakeFromNib {
-	
+  
+  // on first run ask to add the app to login items, ignore if it already is added
+  BOOL launchedBefore = [[NSUserDefaults standardUserDefaults] boolForKey:@"LaunchedBefore"];
+  if (!launchedBefore) {
+    [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"LaunchedBefore"];
+    
+    NSString *appPath = [[NSBundle mainBundle] bundlePath];
+    if (![self loginItemExistsForPath:appPath]) {
+      NSAlert *alert = [[NSAlert alloc] init];
+      alert.messageText = @"Should start on Login?";
+      [alert addButtonWithTitle:@"Launch on Startup"];
+      [alert addButtonWithTitle:@"Cancel"];
+      [alert setInformativeText:@"Should the App be added to your Login items. You can remove it anytime in the User settings."];
+      NSModalResponse response = [alert runModal];
+      if (response == NSAlertFirstButtonReturn) {
+        [self enableLoginItemForPath:appPath];
+      }
+    }
+  }
+  
+  
 	//Create the NSStatusBar and set its length
   brightnessItem = [[NSStatusBar systemStatusBar] statusItemWithLength:NSSquareStatusItemLength];
   
@@ -89,14 +109,9 @@
 
 
 - (void)setDisplayBrightness:(float)brightness {
-  io_service_t      service;
-  CGDirectDisplayID targetDisplay;
-  
   CFStringRef key = CFSTR(kIODisplayBrightnessKey);
-  
-  targetDisplay = [self currentDisplay];
-  service = CGDisplayIOServicePort(targetDisplay);
-  
+  CGDirectDisplayID targetDisplay = [self currentDisplay];
+  io_service_t service = CGDisplayIOServicePort(targetDisplay);
   if (brightness != HUGE_VALF) { // set the brightness, if requested
     IODisplaySetFloatParameter(service, kNilOptions, key, brightness);
   }
@@ -133,6 +148,43 @@
     // TODO disable the slider for this screen
     return 1.0;
   }
+}
+
+- (BOOL)loginItemExistsForPath:(NSString *)appPath {
+  BOOL found = NO;
+  UInt32 seedValue;
+  CFURLRef thePath;
+  
+  LSSharedFileListRef theLoginItemsRefs = LSSharedFileListCreate(NULL, kLSSharedFileListSessionLoginItems, NULL);
+  // We're going to grab the contents of the shared file list (LSSharedFileListItemRef objects)
+  // and pop it in an array so we can iterate through it to find our item.
+  NSArray  *loginItemsArray = (__bridge NSArray *)LSSharedFileListCopySnapshot(theLoginItemsRefs, &seedValue);
+  for (id item in loginItemsArray) {
+    LSSharedFileListItemRef itemRef = (__bridge LSSharedFileListItemRef)item;
+    if (LSSharedFileListItemResolve(itemRef, 0, (CFURLRef*) &thePath, NULL) == noErr) {
+      if ([[(__bridge NSURL *)thePath path] hasPrefix:appPath]) {
+        found = YES;
+        break;
+      }
+      CFRelease(thePath);
+    }
+  }
+  CFRelease((CFArrayRef)loginItemsArray);
+  CFRelease(theLoginItemsRefs);
+  
+  return found;
+}
+
+- (void)enableLoginItemForPath:(NSString *)appPath {
+  LSSharedFileListRef theLoginItemsRefs = LSSharedFileListCreate(NULL, kLSSharedFileListSessionLoginItems, NULL);
+  
+  // We call LSSharedFileListInsertItemURL to insert the item at the bottom of Login Items list.
+  CFURLRef url = (__bridge CFURLRef)[NSURL fileURLWithPath:appPath];
+  LSSharedFileListItemRef item = LSSharedFileListInsertItemURL(theLoginItemsRefs, kLSSharedFileListItemLast, NULL, NULL, url, NULL, NULL);
+  if (item) {
+    CFRelease(item);
+  }
+  CFRelease(theLoginItemsRefs);
 }
 
 @end
