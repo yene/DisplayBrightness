@@ -111,7 +111,7 @@
 - (void)setDisplayBrightness:(float)brightness {
   CFStringRef key = CFSTR(kIODisplayBrightnessKey);
   CGDirectDisplayID targetDisplay = [self currentDisplay];
-  io_service_t service = CGDisplayIOServicePort(targetDisplay);
+  io_service_t service = IOServicePortFromCGDisplayID(targetDisplay);
   if (brightness != HUGE_VALF) { // set the brightness, if requested
     IODisplaySetFloatParameter(service, kNilOptions, key, brightness);
   }
@@ -137,10 +137,10 @@
   
   CFStringRef key = CFSTR(kIODisplayBrightnessKey);
   targetDisplay = [self currentDisplay];
-  service = CGDisplayIOServicePort(targetDisplay);
-  
+  service = IOServicePortFromCGDisplayID(targetDisplay);
   float brightness = 1.0;
   dErr = IODisplayGetFloatParameter(service, kNilOptions, key, &brightness);
+  IOObjectRelease(service);
   
   if (dErr == kIOReturnSuccess) {
     return brightness;
@@ -186,5 +186,71 @@
   }
   CFRelease(theLoginItemsRefs);
 }
+
+// Returns the io_service_t corresponding to a CG display ID, or 0 on failure.
+// The io_service_t should be released with IOObjectRelease when not needed.
+//
+static io_service_t IOServicePortFromCGDisplayID(CGDirectDisplayID displayID)
+{
+  io_iterator_t iter;
+  io_service_t serv, servicePort = 0;
+  
+  CFMutableDictionaryRef matching = IOServiceMatching("IODisplayConnect");
+  
+  // releases matching for us
+  kern_return_t err = IOServiceGetMatchingServices(kIOMasterPortDefault,
+                                                   matching,
+                                                   &iter);
+  if (err)
+    return 0;
+  
+  while ((serv = IOIteratorNext(iter)) != 0)
+  {
+    CFDictionaryRef info;
+    CFIndex vendorID, productID;
+    CFNumberRef vendorIDRef, productIDRef;
+    Boolean success;
+    
+    info = IODisplayCreateInfoDictionary(serv,
+                                         kIODisplayOnlyPreferredName);
+    
+    vendorIDRef = CFDictionaryGetValue(info,
+                                       CFSTR(kDisplayVendorID));
+    productIDRef = CFDictionaryGetValue(info,
+                                        CFSTR(kDisplayProductID));
+    
+    success = CFNumberGetValue(vendorIDRef, kCFNumberCFIndexType,
+                               &vendorID);
+    success &= CFNumberGetValue(productIDRef, kCFNumberCFIndexType,
+                                &productID);
+    
+    if (!success)
+    {
+      CFRelease(info);
+      continue;
+    }
+    
+    // If the vendor and product id along with the serial don't match
+    // then we are not looking at the correct monitor.
+    // NOTE: The serial number is important in cases where two monitors
+    //       are the exact same.
+    if (CGDisplayVendorNumber(displayID) != vendorID  ||
+        CGDisplayModelNumber(displayID) != productID)
+    {
+      CFRelease(info);
+      continue;
+    }
+    
+    // The VendorID, Product ID, and the Serial Number all Match Up!
+    // Therefore we have found the appropriate display io_service
+    servicePort = serv;
+    CFRelease(info);
+    break;
+  }
+  
+  IOObjectRelease(iter);
+  return servicePort;
+}
+
 
 @end
