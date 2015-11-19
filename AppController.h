@@ -12,10 +12,6 @@
 @interface AppController : NSObject {
 	IBOutlet NSMenu *brightnessMenu;
 	IBOutlet NSMenuItem *brightnessSliderItem;
-	NSStatusItem	*brightnessItem;
-  NSImage			*brightnessImage;
-	NSImage			*brightnessImageHighlight;
-	float value;
 }
 
 - (float)getDisplayBrightness;

@@ -13,8 +13,7 @@
 
 @implementation NSSlider (Scrollwheel)
 
-- (void)    scrollWheel:(NSEvent*) event
-{
+- (void)scrollWheel:(NSEvent*)event {
   float range = [self maxValue] - [self minValue];
   float increment = (range * [event deltaY]) / 100;
   float val = [self floatValue] + increment;
@@ -36,8 +35,14 @@
 
 @end
 
-@implementation AppController
-- (void) awakeFromNib {
+@implementation AppController {
+  NSSlider *brightnessSlider;
+  NSStatusItem	*brightnessItem;
+  NSImage			*brightnessImage;
+  NSImage			*brightnessImageHighlight;
+}
+
+- (void)awakeFromNib {
   
   // on first run ask to add the app to login items, ignore if it already is added
   BOOL launchedBefore = [[NSUserDefaults standardUserDefaults] boolForKey:@"LaunchedBefore"];
@@ -58,55 +63,38 @@
     }
   }
   
-  
-	//Create the NSStatusBar and set its length
   brightnessItem = [[NSStatusBar systemStatusBar] statusItemWithLength:NSSquareStatusItemLength];
   
-  //Used to detect where our files are
   NSBundle *bundle = [NSBundle mainBundle];
-    
-  //Allocates and loads the images into the application which will be used for our NSStatusItem
   brightnessImage = [[NSImage alloc] initWithContentsOfFile:[bundle pathForResource:@"display_icon" ofType:@"png"]];
   brightnessImageHighlight = [[NSImage alloc] initWithContentsOfFile:[bundle pathForResource:@"display_icon_white" ofType:@"png"]];
 
-  //Sets the images in our NSStatusItem
   [brightnessItem setImage:brightnessImage];
   [brightnessItem setAlternateImage:brightnessImageHighlight];
   
 	NSRect size = NSMakeRect(0,0,30,104);
-	NSSlider *brightnessSlider = [[NSSlider alloc] initWithFrame:size];
-	[brightnessSlider bind:@"value" toObject:self withKeyPath:@"value" options:nil];
+	brightnessSlider = [[NSSlider alloc] initWithFrame:size];
+  [brightnessSlider setTarget:self];
+  [brightnessSlider setAction:@selector(sliderAction)];
 	[brightnessSlider setMaxValue:1.0];
 	[brightnessSlider setMinValue:0.01];
 	[brightnessSlider setFloatValue:[self getDisplayBrightness]];
 	[brightnessSlider setContinuous:YES];
 
 	[brightnessSliderItem setView:brightnessSlider];
-  //Tells the NSStatusItem what menu to load
   [brightnessItem setMenu:brightnessMenu];
-  //Sets the tooptip for our item
   [brightnessItem setToolTip:@"DisplayBrightness Menu Item"];
-  //Enables highlighting
   [brightnessItem setHighlightMode:YES];
 	
-	[self addObserver:self forKeyPath:@"value"
-							  options:(NSKeyValueObservingOptionNew)
-							  context:NULL]; 
 }
 
-- (void)menuWillOpen:(NSMenu *)menu
-{
-    [self willChangeValueForKey:@"value"];
-    value = [self getDisplayBrightness];
-    [self didChangeValueForKey:@"value"];
+- (void)menuWillOpen:(NSMenu *)menu {
+  [brightnessSlider setFloatValue:[self getDisplayBrightness]];
 }
 
-- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
-
-	[self setDisplayBrightness:value];
+- (void)sliderAction {
+  [self setDisplayBrightness: [brightnessSlider floatValue]];
 }
-
-
 
 - (void)setDisplayBrightness:(float)brightness {
   CFStringRef key = CFSTR(kIODisplayBrightnessKey);
@@ -143,9 +131,10 @@
   IOObjectRelease(service);
   
   if (dErr == kIOReturnSuccess) {
+    [brightnessSlider setEnabled:YES];
     return brightness;
   } else {
-    // TODO disable the slider for this screen
+    [brightnessSlider setEnabled:NO];
     return 1.0;
   }
 }
