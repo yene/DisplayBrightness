@@ -20,13 +20,14 @@
   
   BOOL wrapValue = ([[self cell] sliderType] == NSCircularSlider);
   
-  if( wrapValue )
-  {
-    if ( val < [self minValue])
+  if (wrapValue) {
+    if (val < [self minValue]) {
       val = [self maxValue] - fabs(increment);
+    }
     
-    if( val > [self maxValue])
+    if( val > [self maxValue]) {
       val = [self minValue] + fabs(increment);
+    }
   }
   
   [self setFloatValue:val];
@@ -38,8 +39,6 @@
 @implementation AppController {
   NSSlider *brightnessSlider;
   NSStatusItem	*brightnessItem;
-  NSImage			*brightnessImage;
-  NSImage			*brightnessImageHighlight;
 }
 
 - (void)awakeFromNib {
@@ -47,28 +46,18 @@
   // on first run ask to add the app to login items, ignore if it already is added
   BOOL launchedBefore = [[NSUserDefaults standardUserDefaults] boolForKey:@"LaunchedBefore"];
   if (!launchedBefore) {
-    [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"LaunchedBefore"];
-    
-    NSString *appPath = [[NSBundle mainBundle] bundlePath];
-    if (![self loginItemExistsForPath:appPath]) {
-      NSAlert *alert = [[NSAlert alloc] init];
-      alert.messageText = @"Should start on Login?";
-      [alert addButtonWithTitle:@"Launch on Startup"];
-      [alert addButtonWithTitle:@"Cancel"];
-      [alert setInformativeText:@"Should the App be added to your Login items. You can remove it anytime in the User settings."];
-      NSModalResponse response = [alert runModal];
-      if (response == NSAlertFirstButtonReturn) {
-        [self enableLoginItemForPath:appPath];
-      }
-    }
+    [self askForLaunchOnStartup];
   }
   
   brightnessItem = [[NSStatusBar systemStatusBar] statusItemWithLength:NSSquareStatusItemLength];
   
   NSBundle *bundle = [NSBundle mainBundle];
-  brightnessImage = [[NSImage alloc] initWithContentsOfFile:[bundle pathForResource:@"display_icon" ofType:@"png"]];
-  brightnessImageHighlight = [[NSImage alloc] initWithContentsOfFile:[bundle pathForResource:@"display_icon_white" ofType:@"png"]];
+  NSImage *brightnessImage = [[NSImage alloc] initWithContentsOfFile:[bundle pathForResource:@"display_icon" ofType:@"png"]];
+  NSImage *brightnessImageHighlight = [[NSImage alloc] initWithContentsOfFile:[bundle pathForResource:@"display_icon_white" ofType:@"png"]];
 
+  [brightnessItem setMenu:brightnessMenu];
+  [brightnessItem setToolTip:@"Control the display brightness by moving the slider."];
+  [brightnessItem setHighlightMode:YES];
   [brightnessItem setImage:brightnessImage];
   [brightnessItem setAlternateImage:brightnessImageHighlight];
   
@@ -77,15 +66,27 @@
   [brightnessSlider setTarget:self];
   [brightnessSlider setAction:@selector(sliderAction)];
 	[brightnessSlider setMaxValue:1.0];
-	[brightnessSlider setMinValue:0.01];
+	[brightnessSlider setMinValue:0.01]; // 0 would turn the display black
 	[brightnessSlider setFloatValue:[self getDisplayBrightness]];
 	[brightnessSlider setContinuous:YES];
-
 	[brightnessSliderItem setView:brightnessSlider];
-  [brightnessItem setMenu:brightnessMenu];
-  [brightnessItem setToolTip:@"DisplayBrightness Menu Item"];
-  [brightnessItem setHighlightMode:YES];
-	
+}
+
+- (void)askForLaunchOnStartup {
+  [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"LaunchedBefore"];
+  
+  NSString *appPath = [[NSBundle mainBundle] bundlePath];
+  if (![self loginItemExistsForPath:appPath]) {
+    NSAlert *alert = [[NSAlert alloc] init];
+    alert.messageText = @"Should start on Login?";
+    [alert addButtonWithTitle:@"Launch on Startup"];
+    [alert addButtonWithTitle:@"Cancel"];
+    [alert setInformativeText:@"Should the App be added to your Login items. You can remove it anytime in the User settings."];
+    NSModalResponse response = [alert runModal];
+    if (response == NSAlertFirstButtonReturn) {
+      [self enableLoginItemForPath:appPath];
+    }
+  }
 }
 
 - (void)menuWillOpen:(NSMenu *)menu {
@@ -93,14 +94,14 @@
 }
 
 - (void)sliderAction {
-  [self setDisplayBrightness: [brightnessSlider floatValue]];
+  [self setDisplayBrightness:[brightnessSlider floatValue]];
 }
 
 - (void)setDisplayBrightness:(float)brightness {
   CFStringRef key = CFSTR(kIODisplayBrightnessKey);
   CGDirectDisplayID targetDisplay = [self currentDisplay];
   io_service_t service = IOServicePortFromCGDisplayID(targetDisplay);
-  if (brightness != HUGE_VALF) { // set the brightness, if requested
+  if (brightness != HUGE_VALF) {
     IODisplaySetFloatParameter(service, kNilOptions, key, brightness);
   }
 }
@@ -119,15 +120,12 @@
 
 - (float)getDisplayBrightness {
   [self currentDisplay];
-  CGDisplayErr      dErr;
-  io_service_t      service;
-  CGDirectDisplayID targetDisplay;
-  
+
   CFStringRef key = CFSTR(kIODisplayBrightnessKey);
-  targetDisplay = [self currentDisplay];
-  service = IOServicePortFromCGDisplayID(targetDisplay);
+  CGDirectDisplayID targetDisplay = [self currentDisplay];
+  io_service_t service = IOServicePortFromCGDisplayID(targetDisplay);
   float brightness = 1.0;
-  dErr = IODisplayGetFloatParameter(service, kNilOptions, key, &brightness);
+  CGDisplayErr dErr = IODisplayGetFloatParameter(service, kNilOptions, key, &brightness);
   IOObjectRelease(service);
   
   if (dErr == kIOReturnSuccess) {
@@ -179,8 +177,7 @@
 // Returns the io_service_t corresponding to a CG display ID, or 0 on failure.
 // The io_service_t should be released with IOObjectRelease when not needed.
 //
-static io_service_t IOServicePortFromCGDisplayID(CGDirectDisplayID displayID)
-{
+static io_service_t IOServicePortFromCGDisplayID(CGDirectDisplayID displayID) {
   io_iterator_t iter;
   io_service_t serv, servicePort = 0;
   
@@ -190,31 +187,25 @@ static io_service_t IOServicePortFromCGDisplayID(CGDirectDisplayID displayID)
   kern_return_t err = IOServiceGetMatchingServices(kIOMasterPortDefault,
                                                    matching,
                                                    &iter);
-  if (err)
+  if (err) {
     return 0;
+  }
   
-  while ((serv = IOIteratorNext(iter)) != 0)
-  {
+  while ((serv = IOIteratorNext(iter)) != 0) {
     CFDictionaryRef info;
     CFIndex vendorID, productID;
     CFNumberRef vendorIDRef, productIDRef;
     Boolean success;
     
-    info = IODisplayCreateInfoDictionary(serv,
-                                         kIODisplayOnlyPreferredName);
+    info = IODisplayCreateInfoDictionary(serv, kIODisplayOnlyPreferredName);
     
-    vendorIDRef = CFDictionaryGetValue(info,
-                                       CFSTR(kDisplayVendorID));
-    productIDRef = CFDictionaryGetValue(info,
-                                        CFSTR(kDisplayProductID));
+    vendorIDRef = CFDictionaryGetValue(info, CFSTR(kDisplayVendorID));
+    productIDRef = CFDictionaryGetValue(info, CFSTR(kDisplayProductID));
     
-    success = CFNumberGetValue(vendorIDRef, kCFNumberCFIndexType,
-                               &vendorID);
-    success &= CFNumberGetValue(productIDRef, kCFNumberCFIndexType,
-                                &productID);
+    success = CFNumberGetValue(vendorIDRef, kCFNumberCFIndexType, &vendorID);
+    success &= CFNumberGetValue(productIDRef, kCFNumberCFIndexType, &productID);
     
-    if (!success)
-    {
+    if (!success) {
       CFRelease(info);
       continue;
     }
@@ -240,6 +231,5 @@ static io_service_t IOServicePortFromCGDisplayID(CGDirectDisplayID displayID)
   IOObjectRelease(iter);
   return servicePort;
 }
-
 
 @end
