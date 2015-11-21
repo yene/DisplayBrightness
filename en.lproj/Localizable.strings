@@ -1,0 +1,13 @@
+/* 
+  Localizable.strings
+  DisplayBrightness
+
+  Created by Yannick Weiss on 21/11/15.
+
+*/
+
+"ToolTip" = "Control the display brightness by moving the slider.";
+"AlertTitel" = "Should start on Login?";
+"AlertOK" = "Launch on Startup";
+"AlertCancel" = "Cancel";
+"AlertText" = "Should the App be added to your Login items. You can remove it anytime in the User settings.";

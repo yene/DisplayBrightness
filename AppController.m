@@ -47,6 +47,7 @@
   BOOL launchedBefore = [[NSUserDefaults standardUserDefaults] boolForKey:@"LaunchedBefore"];
   if (!launchedBefore) {
     [self askForLaunchOnStartup];
+    [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"LaunchedBefore"];
   }
   
   brightnessItem = [[NSStatusBar systemStatusBar] statusItemWithLength:NSSquareStatusItemLength];
@@ -56,7 +57,7 @@
   NSImage *brightnessImageHighlight = [[NSImage alloc] initWithContentsOfFile:[bundle pathForResource:@"display_icon_white" ofType:@"png"]];
 
   [brightnessItem setMenu:brightnessMenu];
-  [brightnessItem setToolTip:@"Control the display brightness by moving the slider."];
+  [brightnessItem setToolTip:NSLocalizedString(@"ToolTip", nil)];
   [brightnessItem setHighlightMode:YES];
   [brightnessItem setImage:brightnessImage];
   [brightnessItem setAlternateImage:brightnessImageHighlight];
@@ -73,15 +74,14 @@
 }
 
 - (void)askForLaunchOnStartup {
-  [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"LaunchedBefore"];
   
   NSString *appPath = [[NSBundle mainBundle] bundlePath];
   if (![self loginItemExistsForPath:appPath]) {
     NSAlert *alert = [[NSAlert alloc] init];
-    alert.messageText = @"Should start on Login?";
-    [alert addButtonWithTitle:@"Launch on Startup"];
-    [alert addButtonWithTitle:@"Cancel"];
-    [alert setInformativeText:@"Should the App be added to your Login items. You can remove it anytime in the User settings."];
+    alert.messageText = NSLocalizedString(@"AlertTitel", nil);
+    [alert addButtonWithTitle:NSLocalizedString(@"AlertOK", nil)];
+    [alert addButtonWithTitle:NSLocalizedString(@"AlertCancel", nil)];
+    [alert setInformativeText:NSLocalizedString(@"AlertText", nil)];
     NSModalResponse response = [alert runModal];
     if (response == NSAlertFirstButtonReturn) {
       [self enableLoginItemForPath:appPath];

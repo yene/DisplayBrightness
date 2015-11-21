@@ -1,0 +1,13 @@
+/* 
+  Localizable.strings
+  DisplayBrightness
+
+  Created by Yannick Weiss on 21/11/15.
+
+*/
+
+"ToolTip" = "Ändere die Display Helligkeit mit dem Slider.";
+"AlertTitel" = "Beim Start des Rechners öffnen?";
+"AlertOK" = "Beim starten öffnen";
+"AlertCancel" = "Abbrechen";
+"AlertText" = "Soll die App beim starten des Rechners geöffnet werden? Sie können das in der Benutzer Einstellung jederzeit ändern.";
