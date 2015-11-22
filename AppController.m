@@ -51,17 +51,15 @@
   }
   
   brightnessItem = [[NSStatusBar systemStatusBar] statusItemWithLength:NSSquareStatusItemLength];
-  
+  NSStatusBarButton *button = brightnessItem.button;
   NSBundle *bundle = [NSBundle mainBundle];
   NSImage *brightnessImage = [[NSImage alloc] initWithContentsOfFile:[bundle pathForResource:@"display_icon" ofType:@"png"]];
   [brightnessImage setTemplate:YES];
   NSImage *brightnessImageHighlight = [[NSImage alloc] initWithContentsOfFile:[bundle pathForResource:@"display_icon_white" ofType:@"png"]];
 
   [brightnessItem setMenu:brightnessMenu];
-  [brightnessItem setToolTip:NSLocalizedString(@"ToolTip", nil)];
-  [brightnessItem setHighlightMode:YES];
-  [brightnessItem setImage:brightnessImage];
-  [brightnessItem setAlternateImage:brightnessImageHighlight];
+  [button setImage:brightnessImage];
+  [button setAlternateImage:brightnessImageHighlight];
   
 	NSRect size = NSMakeRect(0,0,30,104);
 	brightnessSlider = [[NSSlider alloc] initWithFrame:size];
@@ -130,10 +128,12 @@
   IOObjectRelease(service);
   
   if (dErr == kIOReturnSuccess) {
-    [brightnessSlider setEnabled:YES];
+    brightnessItem.button.enabled = YES;
+    [brightnessItem.button setToolTip:NSLocalizedString(@"ToolTip", nil)];
     return brightness;
   } else {
-    [brightnessSlider setEnabled:NO];
+    brightnessItem.button.enabled = NO;
+    [brightnessItem.button setToolTip:NSLocalizedString(@"ToolTipNotSupported", nil)];
     return 1.0;
   }
 }
