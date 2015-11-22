@@ -37,7 +37,7 @@
 @end
 
 @implementation AppController {
-  NSSlider *brightnessSlider;
+  NSSlider *slider;
   NSStatusItem	*brightnessItem;
 }
 
@@ -50,25 +50,28 @@
   }
   
   brightnessItem = [[NSStatusBar systemStatusBar] statusItemWithLength:NSSquareStatusItemLength];
-  NSStatusBarButton *button = brightnessItem.button;
   NSBundle *bundle = [NSBundle mainBundle];
   NSImage *image = [[NSImage alloc] initWithContentsOfFile:[bundle pathForResource:@"icon" ofType:@"png"]];
   [image setTemplate:YES];
   NSImage *imageWhite = [[NSImage alloc] initWithContentsOfFile:[bundle pathForResource:@"icon_white" ofType:@"png"]];
-
-  [brightnessItem setMenu:brightnessMenu];
-  [button setImage:image];
-  [button setAlternateImage:imageWhite];
+  [brightnessItem.button setImage:image];
+  [brightnessItem.button setAlternateImage:imageWhite];
   
 	NSRect size = NSMakeRect(0,0,30,104);
-	brightnessSlider = [[NSSlider alloc] initWithFrame:size];
-  [brightnessSlider setTarget:self];
-  [brightnessSlider setAction:@selector(sliderAction)];
-	[brightnessSlider setMaxValue:1.0];
-	[brightnessSlider setMinValue:0.01]; // 0 would turn the display black
-	[brightnessSlider setFloatValue:[self getDisplayBrightness]];
-	[brightnessSlider setContinuous:YES];
-	[brightnessSliderItem setView:brightnessSlider];
+	slider = [[NSSlider alloc] initWithFrame:size];
+  [slider setTarget:self];
+  [slider setAction:@selector(sliderAction)];
+	[slider setMaxValue:1.0];
+	[slider setMinValue:0.01]; // 0 would turn the display black
+	[slider setFloatValue:[self getDisplayBrightness]];
+	[slider setContinuous:YES];
+  
+  NSMenuItem *sliderItem = [[NSMenuItem alloc] init];
+  [sliderItem setView:slider];
+  
+  NSMenu *menu = [[NSMenu alloc] init];
+  [menu addItem:sliderItem];
+  [brightnessItem setMenu:menu];
 }
 
 - (void)askForLaunchOnStartup {
@@ -88,11 +91,11 @@
 }
 
 - (void)menuWillOpen:(NSMenu *)menu {
-  [brightnessSlider setFloatValue:[self getDisplayBrightness]];
+  [slider setFloatValue:[self getDisplayBrightness]];
 }
 
 - (void)sliderAction {
-  [self setDisplayBrightness:[brightnessSlider floatValue]];
+  [self setDisplayBrightness:[slider floatValue]];
 }
 
 - (void)setDisplayBrightness:(float)brightness {

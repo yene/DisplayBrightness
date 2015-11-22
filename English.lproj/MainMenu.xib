@@ -14,21 +14,6 @@
         <customObject id="-3" userLabel="Application"/>
         <customObject id="494" customClass="DisplayBrightnessAppDelegate"/>
         <customObject id="420" customClass="NSFontManager"/>
-        <menu id="533" userLabel="Menu">
-            <items>
-                <menuItem onStateImage="F64781E1-4430-4148-B8AB-839BDA76BE17" id="542">
-                    <modifierMask key="keyEquivalentModifierMask"/>
-                </menuItem>
-            </items>
-            <connections>
-                <outlet property="delegate" destination="539" id="566"/>
-            </connections>
-        </menu>
-        <customObject id="539" customClass="AppController">
-            <connections>
-                <outlet property="brightnessMenu" destination="533" id="540"/>
-                <outlet property="brightnessSliderItem" destination="542" id="546"/>
-            </connections>
-        </customObject>
+        <customObject id="539" customClass="AppController"/>
     </objects>
 </document>
