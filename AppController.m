@@ -43,7 +43,6 @@
 
 - (void)awakeFromNib {
   
-  // on first run ask to add the app to login items, ignore if it already is added
   BOOL launchedBefore = [[NSUserDefaults standardUserDefaults] boolForKey:@"LaunchedBefore"];
   if (!launchedBefore) {
     [self askForLaunchOnStartup];
@@ -53,13 +52,13 @@
   brightnessItem = [[NSStatusBar systemStatusBar] statusItemWithLength:NSSquareStatusItemLength];
   NSStatusBarButton *button = brightnessItem.button;
   NSBundle *bundle = [NSBundle mainBundle];
-  NSImage *brightnessImage = [[NSImage alloc] initWithContentsOfFile:[bundle pathForResource:@"display_icon" ofType:@"png"]];
-  [brightnessImage setTemplate:YES];
-  NSImage *brightnessImageHighlight = [[NSImage alloc] initWithContentsOfFile:[bundle pathForResource:@"display_icon_white" ofType:@"png"]];
+  NSImage *image = [[NSImage alloc] initWithContentsOfFile:[bundle pathForResource:@"icon" ofType:@"png"]];
+  [image setTemplate:YES];
+  NSImage *imageWhite = [[NSImage alloc] initWithContentsOfFile:[bundle pathForResource:@"icon_white" ofType:@"png"]];
 
   [brightnessItem setMenu:brightnessMenu];
-  [button setImage:brightnessImage];
-  [button setAlternateImage:brightnessImageHighlight];
+  [button setImage:image];
+  [button setAlternateImage:imageWhite];
   
 	NSRect size = NSMakeRect(0,0,30,104);
 	brightnessSlider = [[NSSlider alloc] initWithFrame:size];
