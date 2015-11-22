@@ -54,6 +54,7 @@
   
   NSBundle *bundle = [NSBundle mainBundle];
   NSImage *brightnessImage = [[NSImage alloc] initWithContentsOfFile:[bundle pathForResource:@"display_icon" ofType:@"png"]];
+  [brightnessImage setTemplate:YES];
   NSImage *brightnessImageHighlight = [[NSImage alloc] initWithContentsOfFile:[bundle pathForResource:@"display_icon_white" ofType:@"png"]];
 
   [brightnessItem setMenu:brightnessMenu];
