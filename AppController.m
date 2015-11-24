@@ -70,6 +70,7 @@
   [sliderItem setView:slider];
   
   NSMenu *menu = [[NSMenu alloc] init];
+  menu.delegate = self;
   [menu addItem:sliderItem];
   [brightnessItem setMenu:menu];
 }
