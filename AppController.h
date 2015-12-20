@@ -14,4 +14,5 @@
 
 - (float)getDisplayBrightness;
 - (void)setDisplayBrightness:(float)brightness;
+- (void)addQuitMenu;
 @end

@@ -56,6 +56,7 @@
   NSImage *imageWhite = [[NSImage alloc] initWithContentsOfFile:[bundle pathForResource:@"icon_white" ofType:@"png"]];
   [brightnessItem.button setImage:image];
   [brightnessItem.button setAlternateImage:imageWhite];
+	[brightnessItem.button setTarget:self];
   
 	NSRect size = NSMakeRect(0,0,30,104);
 	slider = [[NSSlider alloc] initWithFrame:size];
@@ -236,4 +237,30 @@ static io_service_t IOServicePortFromCGDisplayID(CGDirectDisplayID displayID) {
   return servicePort;
 }
 
+- (void)addQuitMenu {
+	NSMenu *menu = [[NSMenu alloc] init];
+	NSMenuItem *menuItem = [[NSMenuItem alloc] init];
+	menuItem.title = NSLocalizedString(@"Quit", nil);
+	menuItem.target = self;
+	menuItem.action = @selector(quit);
+	[menu addItem:menuItem];
+	brightnessItem.menu = menu;
+	[brightnessItem.button performClick:self];
+	brightnessItem.menu = nil;
+}
+
+- (void)quit {
+	[NSApp terminate:self];
+}
+
+@end
+
+@interface NSStatusBarButton (NSStatusBarButtonQuit)
+- (void)rightMouseDown:(NSEvent *)event;
+@end
+
+@implementation NSStatusBarButton (NSStatusBarButtonQuit)
+- (void)rightMouseDown:(NSEvent *)event {
+	[self.target performSelector:@selector(addQuitMenu) withObject:nil];
+}
 @end

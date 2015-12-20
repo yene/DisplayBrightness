@@ -12,3 +12,4 @@
 "AlertCancel" = "Abbrechen";
 "AlertText" = "Soll die App beim starten des Rechners geöffnet werden? Sie können das in der Benutzer Einstellung jederzeit ändern.";
 "ToolTipNotSupported" = "Dieser Bildschirm wird nicht unterstüzt.";
+"Quit" = "Quit"
