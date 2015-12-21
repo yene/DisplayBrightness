@@ -13,3 +13,4 @@
 "AlertText" = "Should the App be added to your Login items. You can remove it anytime in the User settings.";
 "ToolTipNotSupported" = "This display is not supported";
 "Quit" = "Quit";
+"Start at Login" = "Start at Login";
