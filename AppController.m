@@ -167,6 +167,33 @@
 	return found;
 }
 
+- (void)disableLoginItem {
+	NSString *appPath = [[NSBundle mainBundle] bundlePath];
+	[self disableLoginItemForPath:appPath];
+}
+
+- (void)disableLoginItemForPath:(NSString *)appPath {
+	UInt32 seedValue;
+	CFURLRef thePath = NULL;
+	LSSharedFileListRef loginItemsRefs = LSSharedFileListCreate(NULL, kLSSharedFileListSessionLoginItems, NULL);
+	
+	// We're going to grab the contents of the shared file list (LSSharedFileListItemRef objects)
+	// and pop it in an array so we can iterate through it to find our item.
+	CFArrayRef loginItemsArray = LSSharedFileListCopySnapshot(loginItemsRefs, &seedValue);
+	for (id item in (__bridge NSArray *)loginItemsArray) {
+		LSSharedFileListItemRef itemRef = (__bridge LSSharedFileListItemRef)item;
+		if (LSSharedFileListItemResolve(itemRef, 0, (CFURLRef*) &thePath, NULL) == noErr) {
+			if ([[(__bridge NSURL *)thePath path] hasPrefix:appPath]) {
+				LSSharedFileListItemRemove(loginItemsRefs, itemRef); // Deleting the item
+			}
+			// Docs for LSSharedFileListItemResolve say we're responsible
+			// for releasing the CFURLRef that is returned
+			if (thePath != NULL) CFRelease(thePath);
+		}
+	}
+	if (loginItemsArray != NULL) CFRelease(loginItemsArray);
+}
+
 - (void)enableLoginItem {
 	NSString *appPath = [[NSBundle mainBundle] bundlePath];
 	[self enableLoginItemForPath:appPath];
@@ -252,6 +279,12 @@ static io_service_t IOServicePortFromCGDisplayID(CGDirectDisplayID displayID) {
 		menuItem.title = NSLocalizedString(@"Start at Login", nil);
 		menuItem.target = self;
 		menuItem.action = @selector(enableLoginItem);
+		[menu addItem:menuItem];
+	} else {
+		NSMenuItem *menuItem = [[NSMenuItem alloc] init];
+		menuItem.title = NSLocalizedString(@"Remove Login Item", nil);
+		menuItem.target = self;
+		menuItem.action = @selector(disableLoginItem);
 		[menu addItem:menuItem];
 	}
 	

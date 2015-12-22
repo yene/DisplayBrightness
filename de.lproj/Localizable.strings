@@ -14,3 +14,4 @@
 "ToolTipNotSupported" = "Dieser Bildschirm wird nicht unterstüzt.";
 "Quit" = "Quit";
 "Start at Login" = "Beim Anmelden öffnen";
+"Remove Login Item" = "Beim Anmelden nicht starten";
