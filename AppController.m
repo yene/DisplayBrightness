@@ -303,6 +303,10 @@ static io_service_t IOServicePortFromCGDisplayID(CGDirectDisplayID displayID) {
 	[NSApp terminate:self];
 }
 
+- (void)qui2t {
+	[NSApp terminate:self];
+}
+
 @end
 
 @interface NSStatusBarButton (NSStatusBarButtonQuit)

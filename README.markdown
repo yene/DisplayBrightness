@@ -11,3 +11,4 @@ Right click the menu bar app.
 * Add remove from startupitem to the right click menu.
 * Port to swift.
 * fix display brightness interaction with not supported displays.
+* something something
