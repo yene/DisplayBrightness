@@ -57,23 +57,7 @@
 	[brightnessItem.button setImage:image];
 	[brightnessItem.button setAlternateImage:imageWhite];
 	[brightnessItem.button setTarget:self];
-	
-	NSRect size = NSMakeRect(0,0,30,104);
-	slider = [[NSSlider alloc] initWithFrame:size];
-	[slider setTarget:self];
-	[slider setAction:@selector(sliderAction)];
-	[slider setMaxValue:1.0];
-	[slider setMinValue:0.01]; // 0 would turn the display black
-	[slider setFloatValue:[self getDisplayBrightness]];
-	[slider setContinuous:YES];
-	
-	NSMenuItem *sliderItem = [[NSMenuItem alloc] init];
-	[sliderItem setView:slider];
-	
-	NSMenu *menu = [[NSMenu alloc] init];
-	menu.delegate = self;
-	[menu addItem:sliderItem];
-	[brightnessItem setMenu:menu];
+	[brightnessItem.button setAction:@selector(openMenu)];
 }
 
 - (void)askForLaunchOnStartup {
@@ -92,8 +76,32 @@
 	}
 }
 
-- (void)menuWillOpen:(NSMenu *)menu {
-	[slider setFloatValue:[self getDisplayBrightness]];
+- (void)openMenu {
+	
+	NSMenu *menu = [[NSMenu alloc] init];
+	[brightnessItem setMenu:menu];
+	
+	float br = [self getDisplayBrightness];
+	if (br == -1) {
+		NSMenuItem *menuItem = [[NSMenuItem alloc] init];
+		menuItem.title = NSLocalizedString(@"ToolTipNotSupported", nil);
+		[brightnessItem.menu addItem:menuItem];
+	} else {
+		NSRect size = NSMakeRect(0,0,30,104);
+		slider = [[NSSlider alloc] initWithFrame:size];
+		[slider setTarget:self];
+		[slider setAction:@selector(sliderAction)];
+		[slider setMaxValue:1.0];
+		[slider setMinValue:0.01]; // 0 would turn the display black
+		[slider setFloatValue:br];
+		[slider setContinuous:YES];
+		NSMenuItem *sliderItem = [[NSMenuItem alloc] init];
+		[sliderItem setView:slider];
+		[brightnessItem.menu addItem:sliderItem];
+	}
+	
+	[brightnessItem.button performClick:self];
+	brightnessItem.menu = nil;
 }
 
 - (void)sliderAction {
@@ -110,10 +118,12 @@
 }
 
 - (CGDirectDisplayID)currentDisplay{
-	NSPoint mouseLocation = [NSEvent mouseLocation];
+	CGEventRef ourEvent = CGEventCreate(NULL);
+	CGPoint point = CGEventGetLocation(ourEvent);
+	CFRelease(ourEvent);
 	CGDirectDisplayID dspys;
 	uint32_t dspyCnt;
-	CGError dErr = CGGetDisplaysWithPoint(mouseLocation, 1, &dspys, &dspyCnt);
+	CGError dErr = CGGetDisplaysWithPoint(point, 1, &dspys, &dspyCnt);
 	if (dErr == kCGErrorSuccess) {
 		return dspys;
 	} else {
@@ -122,7 +132,6 @@
 }
 
 - (float)getDisplayBrightness {
-	[self currentDisplay];
 	
 	CFStringRef key = CFSTR(kIODisplayBrightnessKey);
 	CGDirectDisplayID targetDisplay = [self currentDisplay];
@@ -132,13 +141,9 @@
 	IOObjectRelease(service);
 	
 	if (dErr == kIOReturnSuccess) {
-		brightnessItem.button.enabled = YES;
-		[brightnessItem.button setToolTip:NSLocalizedString(@"ToolTip", nil)];
 		return brightness;
 	} else {
-		brightnessItem.button.enabled = NO;
-		[brightnessItem.button setToolTip:NSLocalizedString(@"ToolTipNotSupported", nil)];
-		return 1.0;
+		return -1;
 	}
 }
 
