@@ -1,8 +1,6 @@
-Control your Macbook display brightness from the Menubar.
+Control your Macbook display brightness from the Menubar. [**Download**](http://github.yannickweiss.com?q=yene/DisplayBrightness)
 
 ![screenshot](screenshot.jpg)
-
-[Download](http://github.yannickweiss.com?q=yene/DisplayBrightness)
 
 ## How to quite the app
 Right click the menu bar app.
