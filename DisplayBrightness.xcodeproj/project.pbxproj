@@ -42,7 +42,8 @@
 		AE56262D10D7B4ED00AF143D /* icon_white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_white.png; sourceTree = "<group>"; };
 		AE56262E10D7B4ED00AF143D /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
 		AE56262F10D7B4ED00AF143D /* brightness_icon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = brightness_icon.icns; sourceTree = "<group>"; };
-		AEFA27FA13FE8ED20001A333 /* README.markdown */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.markdown; sourceTree = "<group>"; };
+		AEA4EF901CF8624200A60758 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		AEA4EF911CF8628300A60758 /* LICENSE.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,7 +100,8 @@
 		29B97314FDCFA39411CA2CEA /* DisplayBrightness */ = {
 			isa = PBXGroup;
 			children = (
-				AEFA27FA13FE8ED20001A333 /* README.markdown */,
+				AEA4EF911CF8628300A60758 /* LICENSE.txt */,
+				AEA4EF901CF8624200A60758 /* README.md */,
 				080E96DDFE201D6D7F000001 /* Classes */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
 				29B97317FDCFA39411CA2CEA /* Resources */,

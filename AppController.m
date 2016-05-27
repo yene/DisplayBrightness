@@ -279,19 +279,18 @@ static io_service_t IOServicePortFromCGDisplayID(CGDirectDisplayID displayID) {
 	
 	
 	NSString *appPath = [[NSBundle mainBundle] bundlePath];
+	NSMenuItem *menuItem = [[NSMenuItem alloc] init];
+	menuItem.title = NSLocalizedString(@"Launch at startup", nil); // Launch at startup
+	menuItem.target = self;
+	
 	if (![self loginItemExistsForPath:appPath]) {
-		NSMenuItem *menuItem = [[NSMenuItem alloc] init];
-		menuItem.title = NSLocalizedString(@"Start at Login", nil);
-		menuItem.target = self;
 		menuItem.action = @selector(enableLoginItem);
-		[menu addItem:menuItem];
+		[menuItem setState:NSOffState];
 	} else {
-		NSMenuItem *menuItem = [[NSMenuItem alloc] init];
-		menuItem.title = NSLocalizedString(@"Remove Login Item", nil);
-		menuItem.target = self;
 		menuItem.action = @selector(disableLoginItem);
-		[menu addItem:menuItem];
+		[menuItem setState:NSOnState];
 	}
+	[menu addItem:menuItem];
 	
 	NSMenuItem *quitMenuItem = [[NSMenuItem alloc] init];
 	quitMenuItem.title = NSLocalizedString(@"Quit", nil);
