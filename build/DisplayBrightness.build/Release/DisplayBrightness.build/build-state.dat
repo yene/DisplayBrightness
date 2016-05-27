@@ -1,525 +1,0 @@
-TDisplayBrightness
-v7
-r0
-t282673556.270329
-cCheck dependencies
-cProcessInfoPlistFile /Users/yene/Developer/Cocoa/DisplayBrightness/build/Release/DisplayBrightness.app/Contents/Info.plist DisplayBrightness-Info.plist
-cCopyStringsFile /Users/yene/Developer/Cocoa/DisplayBrightness/build/Release/DisplayBrightness.app/Contents/Resources/English.lproj/InfoPlist.strings English.lproj/InfoPlist.strings
-cCompileXIB /Users/yene/Developer/Cocoa/DisplayBrightness/English.lproj/MainMenu.xib
-cCpResource build/Release/DisplayBrightness.app/Contents/Resources/display_icon_white.png display_icon_white.png
-cCpResource build/Release/DisplayBrightness.app/Contents/Resources/display_icon.png display_icon.png
-cCpResource build/Release/DisplayBrightness.app/Contents/Resources/brightness_icon.icns brightness_icon.icns
-cProcessPCH /var/folders/b3/b3MYUs28EtC-wbcaY1eLUU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/DisplayBrightness_Prefix-aiidzzikfshrbwbbgkesrazakxie/DisplayBrightness_Prefix.pch.gch DisplayBrightness_Prefix.pch normal x86_64 objective-c com.apple.compilers.gcc.4_2
-cProcessPCH /var/folders/b3/b3MYUs28EtC-wbcaY1eLUU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/DisplayBrightness_Prefix-fhfuqsdkdkluebggydwnzvwovfpd/DisplayBrightness_Prefix.pch.gch DisplayBrightness_Prefix.pch normal i386 objective-c com.apple.compilers.gcc.4_2
-cProcessPCH /var/folders/b3/b3MYUs28EtC-wbcaY1eLUU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/DisplayBrightness_Prefix-fidffugynrguoaccivrjzcjhfaqw/DisplayBrightness_Prefix.pch.gch DisplayBrightness_Prefix.pch normal ppc objective-c com.apple.compilers.gcc.4_2
-cCompileC build/DisplayBrightness.build/Release/DisplayBrightness.build/Objects-normal/x86_64/main.o /Users/yene/Developer/Cocoa/DisplayBrightness/main.m normal x86_64 objective-c com.apple.compilers.gcc.4_2
-cCompileC build/DisplayBrightness.build/Release/DisplayBrightness.build/Objects-normal/x86_64/DisplayBrightnessAppDelegate.o /Users/yene/Developer/Cocoa/DisplayBrightness/DisplayBrightnessAppDelegate.m normal x86_64 objective-c com.apple.compilers.gcc.4_2
-cCompileC build/DisplayBrightness.build/Release/DisplayBrightness.build/Objects-normal/x86_64/AppController.o /Users/yene/Developer/Cocoa/DisplayBrightness/AppController.m normal x86_64 objective-c com.apple.compilers.gcc.4_2
-cCompileC build/DisplayBrightness.build/Release/DisplayBrightness.build/Objects-normal/i386/main.o /Users/yene/Developer/Cocoa/DisplayBrightness/main.m normal i386 objective-c com.apple.compilers.gcc.4_2
-cCompileC build/DisplayBrightness.build/Release/DisplayBrightness.build/Objects-normal/i386/DisplayBrightnessAppDelegate.o /Users/yene/Developer/Cocoa/DisplayBrightness/DisplayBrightnessAppDelegate.m normal i386 objective-c com.apple.compilers.gcc.4_2
-cCompileC build/DisplayBrightness.build/Release/DisplayBrightness.build/Objects-normal/i386/AppController.o /Users/yene/Developer/Cocoa/DisplayBrightness/AppController.m normal i386 objective-c com.apple.compilers.gcc.4_2
-cLd /Users/yene/Developer/Cocoa/DisplayBrightness/build/DisplayBrightness.build/Release/DisplayBrightness.build/Objects-normal/x86_64/DisplayBrightness normal x86_64
-cCompileC build/DisplayBrightness.build/Release/DisplayBrightness.build/Objects-normal/ppc/main.o /Users/yene/Developer/Cocoa/DisplayBrightness/main.m normal ppc objective-c com.apple.compilers.gcc.4_2
-cCompileC build/DisplayBrightness.build/Release/DisplayBrightness.build/Objects-normal/ppc/DisplayBrightnessAppDelegate.o /Users/yene/Developer/Cocoa/DisplayBrightness/DisplayBrightnessAppDelegate.m normal ppc objective-c com.apple.compilers.gcc.4_2
-cCompileC build/DisplayBrightness.build/Release/DisplayBrightness.build/Objects-normal/ppc/AppController.o /Users/yene/Developer/Cocoa/DisplayBrightness/AppController.m normal ppc objective-c com.apple.compilers.gcc.4_2
-cLd /Users/yene/Developer/Cocoa/DisplayBrightness/build/DisplayBrightness.build/Release/DisplayBrightness.build/Objects-normal/i386/DisplayBrightness normal i386
-cLd /Users/yene/Developer/Cocoa/DisplayBrightness/build/DisplayBrightness.build/Release/DisplayBrightness.build/Objects-normal/ppc/DisplayBrightness normal ppc
-cCreateUniversalBinary /Users/yene/Developer/Cocoa/DisplayBrightness/build/Release/DisplayBrightness.app/Contents/MacOS/DisplayBrightness normal "x86_64 i386 ppc"
-cGenerateDSYMFile /Users/yene/Developer/Cocoa/DisplayBrightness/build/Release/DisplayBrightness.app.dSYM /Users/yene/Developer/Cocoa/DisplayBrightness/build/Release/DisplayBrightness.app/Contents/MacOS/DisplayBrightness
-cTouch /Users/yene/Developer/Cocoa/DisplayBrightness/build/Release/DisplayBrightness.app
-
-N/Developer/SDKs/MacOSX10.6.sdk
-c000000004ABBF0FD00000000000000EE
-t1253830909
-s238
-
-N/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/ApplicationServices.framework/Headers/ApplicationServices.h
-c000000004A12050C0000000000000475
-t1242694924
-s1141
-
-N/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Cocoa.framework/Headers/Cocoa.h
-c0000000040C4AA6800000000000001E5
-t1086630504
-s485
-
-N/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/IOKit.framework/Headers/graphics/IOGraphicsLib.h
-c000000004A4D52040000000000007246
-t1246581252
-s29254
-
-N/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/IOKit.framework/IOKit
-c000000004ABBF0EE000000000003AB6C
-t1253830894
-s240492
-
-N/Developer/SDKs/MacOSX10.6.sdk/usr/include/stdio.h
-c000000004A5C14A70000000000004174
-t1247548583
-s16756
-
-N/System/Library/Frameworks/Cocoa.framework/Cocoa
-c000000004A1F2D63000000000000A5E0
-t1243557219
-s42464
-
-N/Users/yene/Developer/Cocoa/DisplayBrightness/AppController.h
-c000000004B279B5B000000000000023C
-t1260886875
-s572
-i<Cocoa/Cocoa.h>
-
-N/Users/yene/Developer/Cocoa/DisplayBrightness/AppController.m
-c000000004B27A5970000000000001014
-t1260889495
-s4116
-i"AppController.h"
-i<stdio.h>
-i<IOKit/graphics/IOGraphicsLib.h>
-i<ApplicationServices/ApplicationServices.h>
-
-N/Users/yene/Developer/Cocoa/DisplayBrightness/DisplayBrightnessAppDelegate.h
-c000000004B277A8500000000000001A2
-t1260878469
-s418
-i<Cocoa/Cocoa.h>
-
-N/Users/yene/Developer/Cocoa/DisplayBrightness/DisplayBrightnessAppDelegate.m
-c000000004B277C1F000000000000019B
-t1260878879
-s411
-i"DisplayBrightnessAppDelegate.h"
-
-N/Users/yene/Developer/Cocoa/DisplayBrightness/DisplayBrightness_Prefix.pch
-c000000004B2774B600000000000000A5
-t1260876982
-s165
-i<Cocoa/Cocoa.h>
-
-N/Users/yene/Developer/Cocoa/DisplayBrightness/English.lproj/InfoPlist.strings
-c000000004B2774B6000000000000002D
-t1260876982
-s45
-
-N/Users/yene/Developer/Cocoa/DisplayBrightness/English.lproj/MainMenu.xib
-c000000004B27A2E2000000000002D0C8
-t1260888802
-s184520
-
-N/Users/yene/Developer/Cocoa/DisplayBrightness/brightness_icon.icns
-c000000004A1A1FFE000000000000F782
-t1243226110
-s63362
-
-N/Users/yene/Developer/Cocoa/DisplayBrightness/build/DisplayBrightness.build/Release/DisplayBrightness.build/Objects-normal/i386/AppController.o
-t1260980736
-s24484
-
-N/Users/yene/Developer/Cocoa/DisplayBrightness/build/DisplayBrightness.build/Release/DisplayBrightness.build/Objects-normal/i386/DisplayBrightness
-t1260980738
-s20108
-
-N/Users/yene/Developer/Cocoa/DisplayBrightness/build/DisplayBrightness.build/Release/DisplayBrightness.build/Objects-normal/i386/DisplayBrightness.LinkFileList
-c000000004B279AC300000000000001B6
-t1260886723
-s438
-
-N/Users/yene/Developer/Cocoa/DisplayBrightness/build/DisplayBrightness.build/Release/DisplayBrightness.build/Objects-normal/i386/DisplayBrightnessAppDelegate.o
-t1260886735
-s16168
-
-N/Users/yene/Developer/Cocoa/DisplayBrightness/build/DisplayBrightness.build/Release/DisplayBrightness.build/Objects-normal/i386/main.o
-t1260886735
-s4864
-
-N/Users/yene/Developer/Cocoa/DisplayBrightness/build/DisplayBrightness.build/Release/DisplayBrightness.build/Objects-normal/ppc/AppController.o
-t1260980753
-s25972
-
-N/Users/yene/Developer/Cocoa/DisplayBrightness/build/DisplayBrightness.build/Release/DisplayBrightness.build/Objects-normal/ppc/DisplayBrightness
-t1260980755
-s19628
-
-N/Users/yene/Developer/Cocoa/DisplayBrightness/build/DisplayBrightness.build/Release/DisplayBrightness.build/Objects-normal/ppc/DisplayBrightness.LinkFileList
-c000000004B279AC300000000000001B3
-t1260886723
-s435
-
-N/Users/yene/Developer/Cocoa/DisplayBrightness/build/DisplayBrightness.build/Release/DisplayBrightness.build/Objects-normal/ppc/DisplayBrightnessAppDelegate.o
-t1260886735
-s16060
-
-N/Users/yene/Developer/Cocoa/DisplayBrightness/build/DisplayBrightness.build/Release/DisplayBrightness.build/Objects-normal/ppc/main.o
-t1260886735
-s4896
-
-N/Users/yene/Developer/Cocoa/DisplayBrightness/build/DisplayBrightness.build/Release/DisplayBrightness.build/Objects-normal/x86_64/AppController.o
-t1260980710
-s31084
-
-N/Users/yene/Developer/Cocoa/DisplayBrightness/build/DisplayBrightness.build/Release/DisplayBrightness.build/Objects-normal/x86_64/DisplayBrightness
-t1260980723
-s18136
-
-N/Users/yene/Developer/Cocoa/DisplayBrightness/build/DisplayBrightness.build/Release/DisplayBrightness.build/Objects-normal/x86_64/DisplayBrightness.LinkFileList
-c000000004B279AC300000000000001BC
-t1260886723
-s444
-
-N/Users/yene/Developer/Cocoa/DisplayBrightness/build/DisplayBrightness.build/Release/DisplayBrightness.build/Objects-normal/x86_64/DisplayBrightnessAppDelegate.o
-t1260886735
-s22252
-
-N/Users/yene/Developer/Cocoa/DisplayBrightness/build/DisplayBrightness.build/Release/DisplayBrightness.build/Objects-normal/x86_64/main.o
-t1260886735
-s5064
-
-N/Users/yene/Developer/Cocoa/DisplayBrightness/build/Release/DisplayBrightness.app
-t1260980756
-s102
-
-N/Users/yene/Developer/Cocoa/DisplayBrightness/build/Release/DisplayBrightness.app.dSYM
-t1260980756
-s102
-
-N/Users/yene/Developer/Cocoa/DisplayBrightness/build/Release/DisplayBrightness.app/Contents/Info.plist
-t1260980691
-s1022
-
-N/Users/yene/Developer/Cocoa/DisplayBrightness/build/Release/DisplayBrightness.app/Contents/MacOS/DisplayBrightness
-t1260980755
-s64684
-
-N/Users/yene/Developer/Cocoa/DisplayBrightness/build/Release/DisplayBrightness.app/Contents/PkgInfo
-t1260980691
-s8
-
-N/Users/yene/Developer/Cocoa/DisplayBrightness/build/Release/DisplayBrightness.app/Contents/Resources/English.lproj/InfoPlist.strings
-t1260980694
-s92
-
-N/Users/yene/Developer/Cocoa/DisplayBrightness/build/Release/DisplayBrightness.app/Contents/Resources/English.lproj/MainMenu.nib
-t1260980703
-s35376
-
-N/Users/yene/Developer/Cocoa/DisplayBrightness/build/Release/DisplayBrightness.app/Contents/Resources/brightness_icon.icns
-t1260980694
-s63362
-
-N/Users/yene/Developer/Cocoa/DisplayBrightness/build/Release/DisplayBrightness.app/Contents/Resources/display_icon.png
-t1260980694
-s2885
-
-N/Users/yene/Developer/Cocoa/DisplayBrightness/build/Release/DisplayBrightness.app/Contents/Resources/display_icon_white.png
-t1260980694
-s2910
-
-N/Users/yene/Developer/Cocoa/DisplayBrightness/display_icon.png
-c000000004A1A1FFE0000000000000B45
-t1243226110
-s2885
-
-N/Users/yene/Developer/Cocoa/DisplayBrightness/display_icon_white.png
-c000000004A1A1FFE0000000000000B5E
-t1243226110
-s2910
-
-N/Users/yene/Developer/Cocoa/DisplayBrightness/main.m
-c000000004B2774B6000000000000010B
-t1260876982
-s267
-i<Cocoa/Cocoa.h>
-
-N/var/folders/b3/b3MYUs28EtC-wbcaY1eLUU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/DisplayBrightness_Prefix-aiidzzikfshrbwbbgkesrazakxie/DisplayBrightness_Prefix.pch.gch
-t1260886730
-s52868880
-
-N/var/folders/b3/b3MYUs28EtC-wbcaY1eLUU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/DisplayBrightness_Prefix-fhfuqsdkdkluebggydwnzvwovfpd/DisplayBrightness_Prefix.pch.gch
-t1260886730
-s55502640
-
-N/var/folders/b3/b3MYUs28EtC-wbcaY1eLUU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/DisplayBrightness_Prefix-fidffugynrguoaccivrjzcjhfaqw/DisplayBrightness_Prefix.pch.gch
-t1260886734
-s52737616
-
-NDisplayBrightness-Info.plist
-c000000004B277DBD0000000000000424
-t1260879293
-s1060
-
-CCheck dependencies
-r0
-lSLF07#2@18"Check dependencies282673491#282673491#0(0"0(0#1#0"9007693183516772#0"0#
-
-CCompileC build/DisplayBrightness.build/Release/DisplayBrightness.build/Objects-normal/i386/AppController.o /Users/yene/Developer/Cocoa/DisplayBrightness/AppController.m normal i386 objective-c com.apple.compilers.gcc.4_2
-s282673506.151026
-e282673536.028980
-r1
-xCompileC
-xbuild/DisplayBrightness.build/Release/DisplayBrightness.build/Objects-normal/i386/AppController.o
-x/Users/yene/Developer/Cocoa/DisplayBrightness/AppController.m
-xnormal
-xi386
-xobjective-c
-xcom.apple.compilers.gcc.4_2
-lSLF07#2@69"Compile /Users/yene/Developer/Cocoa/DisplayBrightness/AppController.m282673506#282673536#0(0"0(0#0#61"/Users/yene/Developer/Cocoa/DisplayBrightness/AppController.m4300885448#1775"    cd /Users/yene/Developer/Cocoa/DisplayBrightness    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -fasm-blocks -Os -mdynamic-no-pic -Wreturn-type -Wunused-variable -isysroot /Developer/SDKs/MacOSX10.6.sdk -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -iquote /Users/yene/Developer/Cocoa/DisplayBrightness/build/DisplayBrightness.build/Release/DisplayBrightness.build/DisplayBrightness-generated-files.hmap -I/Users/yene/Developer/Cocoa/DisplayBrightness/build/DisplayBrightness.build/Release/DisplayBrightness.build/DisplayBrightness-own-target-headers.hmap -I/Users/yene/Developer/Cocoa/DisplayBrightness/build/DisplayBrightness.build/Release/DisplayBrightness.build/DisplayBrightness-all-target-headers.hmap -iquote /Users/yene/Developer/Cocoa/DisplayBrightness/build/DisplayBrightness.build/Release/DisplayBrightness.build/DisplayBrightness-project-headers.hmap -F/Users/yene/Developer/Cocoa/DisplayBrightness/build/Release -I/Users/yene/Developer/Cocoa/DisplayBrightness/build/Release/include -I/Users/yene/Developer/Cocoa/DisplayBrightness/build/DisplayBrightness.build/Release/DisplayBrightness.build/DerivedSources/i386 -I/Users/yene/Developer/Cocoa/DisplayBrightness/build/DisplayBrightness.build/Release/DisplayBrightness.build/DerivedSources -include /var/folders/b3/b3MYUs28EtC-wbcaY1eLUU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/DisplayBrightness_Prefix-fhfuqsdkdkluebggydwnzvwovfpd/DisplayBrightness_Prefix.pch -c /Users/yene/Developer/Cocoa/DisplayBrightness/AppController.m -o /Users/yene/Developer/Cocoa/DisplayBrightness/build/DisplayBrightness.build/Release/DisplayBrightness.build/Objects-normal/i386/AppController.o0#
-
-CCompileC build/DisplayBrightness.build/Release/DisplayBrightness.build/Objects-normal/i386/DisplayBrightnessAppDelegate.o /Users/yene/Developer/Cocoa/DisplayBrightness/DisplayBrightnessAppDelegate.m normal i386 objective-c com.apple.compilers.gcc.4_2
-s282579535.334955
-e282579535.562194
-r1
-xCompileC
-xbuild/DisplayBrightness.build/Release/DisplayBrightness.build/Objects-normal/i386/DisplayBrightnessAppDelegate.o
-x/Users/yene/Developer/Cocoa/DisplayBrightness/DisplayBrightnessAppDelegate.m
-xnormal
-xi386
-xobjective-c
-xcom.apple.compilers.gcc.4_2
-o/Users/yene/Developer/Cocoa/DisplayBrightness/DisplayBrightnessAppDelegate.m:18: warning: incomplete implementation of class 'DisplayBrightnessAppDelegate'
-o/Users/yene/Developer/Cocoa/DisplayBrightness/DisplayBrightnessAppDelegate.m:18: warning: method definition for '-lockScreen:' not found
-lSLF07#2@84"Compile /Users/yene/Developer/Cocoa/DisplayBrightness/DisplayBrightnessAppDelegate.m282579535#282579535#0(293"/Users/yene/Developer/Cocoa/DisplayBrightness/DisplayBrightnessAppDelegate.m:18: warning: incomplete implementation of class 'DisplayBrightnessAppDelegate'/Users/yene/Developer/Cocoa/DisplayBrightness/DisplayBrightnessAppDelegate.m:18: warning: method definition for '-lockScreen:' not found2(22@65"Incomplete implementation of class 'DisplayBrightnessAppDelegate'282579535#0#156#0(6@76"/Users/yene/Developer/Cocoa/DisplayBrightness/DisplayBrightnessAppDelegate.m282571679#18#0#18#0#38"incomplete implementation of class '*'0(22@46"Method definition for '-lockScreen:' not found282579535#156#137#0(6@76"/Users/yene/Developer/Cocoa/DisplayBrightness/DisplayBrightnessAppDelegate.m282571679#18#0#18#0#35"method definition for '*' not found0(0#0#76"/Users/yene/Developer/Cocoa/DisplayBrightness/DisplayBrightnessAppDelegate.m4300885448#1805"    cd /Users/yene/Developer/Cocoa/DisplayBrightness    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -fasm-blocks -Os -mdynamic-no-pic -Wreturn-type -Wunused-variable -isysroot /Developer/SDKs/MacOSX10.6.sdk -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -iquote /Users/yene/Developer/Cocoa/DisplayBrightness/build/DisplayBrightness.build/Release/DisplayBrightness.build/DisplayBrightness-generated-files.hmap -I/Users/yene/Developer/Cocoa/DisplayBrightness/build/DisplayBrightness.build/Release/DisplayBrightness.build/DisplayBrightness-own-target-headers.hmap -I/Users/yene/Developer/Cocoa/DisplayBrightness/build/DisplayBrightness.build/Release/DisplayBrightness.build/DisplayBrightness-all-target-headers.hmap -iquote /Users/yene/Developer/Cocoa/DisplayBrightness/build/DisplayBrightness.build/Release/DisplayBrightness.build/DisplayBrightness-project-headers.hmap -F/Users/yene/Developer/Cocoa/DisplayBrightness/build/Release -I/Users/yene/Developer/Cocoa/DisplayBrightness/build/Release/include -I/Users/yene/Developer/Cocoa/DisplayBrightness/build/DisplayBrightness.build/Release/DisplayBrightness.build/DerivedSources/i386 -I/Users/yene/Developer/Cocoa/DisplayBrightness/build/DisplayBrightness.build/Release/DisplayBrightness.build/DerivedSources -include /var/folders/b3/b3MYUs28EtC-wbcaY1eLUU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/DisplayBrightness_Prefix-fhfuqsdkdkluebggydwnzvwovfpd/DisplayBrightness_Prefix.pch -c /Users/yene/Developer/Cocoa/DisplayBrightness/DisplayBrightnessAppDelegate.m -o /Users/yene/Developer/Cocoa/DisplayBrightness/build/DisplayBrightness.build/Release/DisplayBrightness.build/Objects-normal/i386/DisplayBrightnessAppDelegate.o0#
-
-CCompileC build/DisplayBrightness.build/Release/DisplayBrightness.build/Objects-normal/i386/main.o /Users/yene/Developer/Cocoa/DisplayBrightness/main.m normal i386 objective-c com.apple.compilers.gcc.4_2
-s282579535.128336
-e282579535.365630
-r1
-xCompileC
-xbuild/DisplayBrightness.build/Release/DisplayBrightness.build/Objects-normal/i386/main.o
-x/Users/yene/Developer/Cocoa/DisplayBrightness/main.m
-xnormal
-xi386
-xobjective-c
-xcom.apple.compilers.gcc.4_2
-lSLF07#2@60"Compile /Users/yene/Developer/Cocoa/DisplayBrightness/main.m282579535#282579535#0(0"0(0#0#52"/Users/yene/Developer/Cocoa/DisplayBrightness/main.m4300885448#1757"    cd /Users/yene/Developer/Cocoa/DisplayBrightness    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -fasm-blocks -Os -mdynamic-no-pic -Wreturn-type -Wunused-variable -isysroot /Developer/SDKs/MacOSX10.6.sdk -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -iquote /Users/yene/Developer/Cocoa/DisplayBrightness/build/DisplayBrightness.build/Release/DisplayBrightness.build/DisplayBrightness-generated-files.hmap -I/Users/yene/Developer/Cocoa/DisplayBrightness/build/DisplayBrightness.build/Release/DisplayBrightness.build/DisplayBrightness-own-target-headers.hmap -I/Users/yene/Developer/Cocoa/DisplayBrightness/build/DisplayBrightness.build/Release/DisplayBrightness.build/DisplayBrightness-all-target-headers.hmap -iquote /Users/yene/Developer/Cocoa/DisplayBrightness/build/DisplayBrightness.build/Release/DisplayBrightness.build/DisplayBrightness-project-headers.hmap -F/Users/yene/Developer/Cocoa/DisplayBrightness/build/Release -I/Users/yene/Developer/Cocoa/DisplayBrightness/build/Release/include -I/Users/yene/Developer/Cocoa/DisplayBrightness/build/DisplayBrightness.build/Release/DisplayBrightness.build/DerivedSources/i386 -I/Users/yene/Developer/Cocoa/DisplayBrightness/build/DisplayBrightness.build/Release/DisplayBrightness.build/DerivedSources -include /var/folders/b3/b3MYUs28EtC-wbcaY1eLUU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/DisplayBrightness_Prefix-fhfuqsdkdkluebggydwnzvwovfpd/DisplayBrightness_Prefix.pch -c /Users/yene/Developer/Cocoa/DisplayBrightness/main.m -o /Users/yene/Developer/Cocoa/DisplayBrightness/build/DisplayBrightness.build/Release/DisplayBrightness.build/Objects-normal/i386/main.o0#
-
-CCompileC build/DisplayBrightness.build/Release/DisplayBrightness.build/Objects-normal/ppc/AppController.o /Users/yene/Developer/Cocoa/DisplayBrightness/AppController.m normal ppc objective-c com.apple.compilers.gcc.4_2
-s282673523.425295
-e282673553.947909
-r1
-xCompileC
-xbuild/DisplayBrightness.build/Release/DisplayBrightness.build/Objects-normal/ppc/AppController.o
-x/Users/yene/Developer/Cocoa/DisplayBrightness/AppController.m
-xnormal
-xppc
-xobjective-c
-xcom.apple.compilers.gcc.4_2
-lSLF07#2@69"Compile /Users/yene/Developer/Cocoa/DisplayBrightness/AppController.m282673523#282673553#0(0"0(0#0#61"/Users/yene/Developer/Cocoa/DisplayBrightness/AppController.m4300885448#1769"    cd /Users/yene/Developer/Cocoa/DisplayBrightness    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x objective-c -arch ppc -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -Os -mdynamic-no-pic -Wreturn-type -Wunused-variable -isysroot /Developer/SDKs/MacOSX10.6.sdk -mtune=G5 -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -iquote /Users/yene/Developer/Cocoa/DisplayBrightness/build/DisplayBrightness.build/Release/DisplayBrightness.build/DisplayBrightness-generated-files.hmap -I/Users/yene/Developer/Cocoa/DisplayBrightness/build/DisplayBrightness.build/Release/DisplayBrightness.build/DisplayBrightness-own-target-headers.hmap -I/Users/yene/Developer/Cocoa/DisplayBrightness/build/DisplayBrightness.build/Release/DisplayBrightness.build/DisplayBrightness-all-target-headers.hmap -iquote /Users/yene/Developer/Cocoa/DisplayBrightness/build/DisplayBrightness.build/Release/DisplayBrightness.build/DisplayBrightness-project-headers.hmap -F/Users/yene/Developer/Cocoa/DisplayBrightness/build/Release -I/Users/yene/Developer/Cocoa/DisplayBrightness/build/Release/include -I/Users/yene/Developer/Cocoa/DisplayBrightness/build/DisplayBrightness.build/Release/DisplayBrightness.build/DerivedSources/ppc -I/Users/yene/Developer/Cocoa/DisplayBrightness/build/DisplayBrightness.build/Release/DisplayBrightness.build/DerivedSources -include /var/folders/b3/b3MYUs28EtC-wbcaY1eLUU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/DisplayBrightness_Prefix-fidffugynrguoaccivrjzcjhfaqw/DisplayBrightness_Prefix.pch -c /Users/yene/Developer/Cocoa/DisplayBrightness/AppController.m -o /Users/yene/Developer/Cocoa/DisplayBrightness/build/DisplayBrightness.build/Release/DisplayBrightness.build/Objects-normal/ppc/AppController.o0#
-
-CCompileC build/DisplayBrightness.build/Release/DisplayBrightness.build/Objects-normal/ppc/DisplayBrightnessAppDelegate.o /Users/yene/Developer/Cocoa/DisplayBrightness/DisplayBrightnessAppDelegate.m normal ppc objective-c com.apple.compilers.gcc.4_2
-s282579535.598228
-e282579535.883031
-r1
-xCompileC
-xbuild/DisplayBrightness.build/Release/DisplayBrightness.build/Objects-normal/ppc/DisplayBrightnessAppDelegate.o
-x/Users/yene/Developer/Cocoa/DisplayBrightness/DisplayBrightnessAppDelegate.m
-xnormal
-xppc
-xobjective-c
-xcom.apple.compilers.gcc.4_2
-o/Users/yene/Developer/Cocoa/DisplayBrightness/DisplayBrightnessAppDelegate.m:18: warning: incomplete implementation of class 'DisplayBrightnessAppDelegate'
-o/Users/yene/Developer/Cocoa/DisplayBrightness/DisplayBrightnessAppDelegate.m:18: warning: method definition for '-lockScreen:' not found
-lSLF07#2@84"Compile /Users/yene/Developer/Cocoa/DisplayBrightness/DisplayBrightnessAppDelegate.m282579535#282579535#0(293"/Users/yene/Developer/Cocoa/DisplayBrightness/DisplayBrightnessAppDelegate.m:18: warning: incomplete implementation of class 'DisplayBrightnessAppDelegate'/Users/yene/Developer/Cocoa/DisplayBrightness/DisplayBrightnessAppDelegate.m:18: warning: method definition for '-lockScreen:' not found2(22@65"Incomplete implementation of class 'DisplayBrightnessAppDelegate'282579535#0#156#0(6@76"/Users/yene/Developer/Cocoa/DisplayBrightness/DisplayBrightnessAppDelegate.m282571679#18#0#18#0#38"incomplete implementation of class '*'0(22@46"Method definition for '-lockScreen:' not found282579535#156#137#0(6@76"/Users/yene/Developer/Cocoa/DisplayBrightness/DisplayBrightnessAppDelegate.m282571679#18#0#18#0#35"method definition for '*' not found0(0#0#76"/Users/yene/Developer/Cocoa/DisplayBrightness/DisplayBrightnessAppDelegate.m4300885448#1799"    cd /Users/yene/Developer/Cocoa/DisplayBrightness    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x objective-c -arch ppc -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -Os -mdynamic-no-pic -Wreturn-type -Wunused-variable -isysroot /Developer/SDKs/MacOSX10.6.sdk -mtune=G5 -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -iquote /Users/yene/Developer/Cocoa/DisplayBrightness/build/DisplayBrightness.build/Release/DisplayBrightness.build/DisplayBrightness-generated-files.hmap -I/Users/yene/Developer/Cocoa/DisplayBrightness/build/DisplayBrightness.build/Release/DisplayBrightness.build/DisplayBrightness-own-target-headers.hmap -I/Users/yene/Developer/Cocoa/DisplayBrightness/build/DisplayBrightness.build/Release/DisplayBrightness.build/DisplayBrightness-all-target-headers.hmap -iquote /Users/yene/Developer/Cocoa/DisplayBrightness/build/DisplayBrightness.build/Release/DisplayBrightness.build/DisplayBrightness-project-headers.hmap -F/Users/yene/Developer/Cocoa/DisplayBrightness/build/Release -I/Users/yene/Developer/Cocoa/DisplayBrightness/build/Release/include -I/Users/yene/Developer/Cocoa/DisplayBrightness/build/DisplayBrightness.build/Release/DisplayBrightness.build/DerivedSources/ppc -I/Users/yene/Developer/Cocoa/DisplayBrightness/build/DisplayBrightness.build/Release/DisplayBrightness.build/DerivedSources -include /var/folders/b3/b3MYUs28EtC-wbcaY1eLUU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/DisplayBrightness_Prefix-fidffugynrguoaccivrjzcjhfaqw/DisplayBrightness_Prefix.pch -c /Users/yene/Developer/Cocoa/DisplayBrightness/DisplayBrightnessAppDelegate.m -o /Users/yene/Developer/Cocoa/DisplayBrightness/build/DisplayBrightness.build/Release/DisplayBrightness.build/Objects-normal/ppc/DisplayBrightnessAppDelegate.o0#
-
-CCompileC build/DisplayBrightness.build/Release/DisplayBrightness.build/Objects-normal/ppc/main.o /Users/yene/Developer/Cocoa/DisplayBrightness/main.m normal ppc objective-c com.apple.compilers.gcc.4_2
-s282579535.562307
-e282579535.881144
-r1
-xCompileC
-xbuild/DisplayBrightness.build/Release/DisplayBrightness.build/Objects-normal/ppc/main.o
-x/Users/yene/Developer/Cocoa/DisplayBrightness/main.m
-xnormal
-xppc
-xobjective-c
-xcom.apple.compilers.gcc.4_2
-lSLF07#2@60"Compile /Users/yene/Developer/Cocoa/DisplayBrightness/main.m282579535#282579535#0(0"0(0#0#52"/Users/yene/Developer/Cocoa/DisplayBrightness/main.m4300885448#1751"    cd /Users/yene/Developer/Cocoa/DisplayBrightness    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x objective-c -arch ppc -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -Os -mdynamic-no-pic -Wreturn-type -Wunused-variable -isysroot /Developer/SDKs/MacOSX10.6.sdk -mtune=G5 -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -iquote /Users/yene/Developer/Cocoa/DisplayBrightness/build/DisplayBrightness.build/Release/DisplayBrightness.build/DisplayBrightness-generated-files.hmap -I/Users/yene/Developer/Cocoa/DisplayBrightness/build/DisplayBrightness.build/Release/DisplayBrightness.build/DisplayBrightness-own-target-headers.hmap -I/Users/yene/Developer/Cocoa/DisplayBrightness/build/DisplayBrightness.build/Release/DisplayBrightness.build/DisplayBrightness-all-target-headers.hmap -iquote /Users/yene/Developer/Cocoa/DisplayBrightness/build/DisplayBrightness.build/Release/DisplayBrightness.build/DisplayBrightness-project-headers.hmap -F/Users/yene/Developer/Cocoa/DisplayBrightness/build/Release -I/Users/yene/Developer/Cocoa/DisplayBrightness/build/Release/include -I/Users/yene/Developer/Cocoa/DisplayBrightness/build/DisplayBrightness.build/Release/DisplayBrightness.build/DerivedSources/ppc -I/Users/yene/Developer/Cocoa/DisplayBrightness/build/DisplayBrightness.build/Release/DisplayBrightness.build/DerivedSources -include /var/folders/b3/b3MYUs28EtC-wbcaY1eLUU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/DisplayBrightness_Prefix-fidffugynrguoaccivrjzcjhfaqw/DisplayBrightness_Prefix.pch -c /Users/yene/Developer/Cocoa/DisplayBrightness/main.m -o /Users/yene/Developer/Cocoa/DisplayBrightness/build/DisplayBrightness.build/Release/DisplayBrightness.build/Objects-normal/ppc/main.o0#
-
-CCompileC build/DisplayBrightness.build/Release/DisplayBrightness.build/Objects-normal/x86_64/AppController.o /Users/yene/Developer/Cocoa/DisplayBrightness/AppController.m normal x86_64 objective-c com.apple.compilers.gcc.4_2
-s282673503.377632
-e282673510.975498
-r1
-xCompileC
-xbuild/DisplayBrightness.build/Release/DisplayBrightness.build/Objects-normal/x86_64/AppController.o
-x/Users/yene/Developer/Cocoa/DisplayBrightness/AppController.m
-xnormal
-xx86_64
-xobjective-c
-xcom.apple.compilers.gcc.4_2
-lSLF07#2@69"Compile /Users/yene/Developer/Cocoa/DisplayBrightness/AppController.m282673503#282673510#0(0"0(0#0#61"/Users/yene/Developer/Cocoa/DisplayBrightness/AppController.m4300885448#1781"    cd /Users/yene/Developer/Cocoa/DisplayBrightness    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x objective-c -arch x86_64 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -fasm-blocks -Os -mdynamic-no-pic -Wreturn-type -Wunused-variable -isysroot /Developer/SDKs/MacOSX10.6.sdk -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -iquote /Users/yene/Developer/Cocoa/DisplayBrightness/build/DisplayBrightness.build/Release/DisplayBrightness.build/DisplayBrightness-generated-files.hmap -I/Users/yene/Developer/Cocoa/DisplayBrightness/build/DisplayBrightness.build/Release/DisplayBrightness.build/DisplayBrightness-own-target-headers.hmap -I/Users/yene/Developer/Cocoa/DisplayBrightness/build/DisplayBrightness.build/Release/DisplayBrightness.build/DisplayBrightness-all-target-headers.hmap -iquote /Users/yene/Developer/Cocoa/DisplayBrightness/build/DisplayBrightness.build/Release/DisplayBrightness.build/DisplayBrightness-project-headers.hmap -F/Users/yene/Developer/Cocoa/DisplayBrightness/build/Release -I/Users/yene/Developer/Cocoa/DisplayBrightness/build/Release/include -I/Users/yene/Developer/Cocoa/DisplayBrightness/build/DisplayBrightness.build/Release/DisplayBrightness.build/DerivedSources/x86_64 -I/Users/yene/Developer/Cocoa/DisplayBrightness/build/DisplayBrightness.build/Release/DisplayBrightness.build/DerivedSources -include /var/folders/b3/b3MYUs28EtC-wbcaY1eLUU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/DisplayBrightness_Prefix-aiidzzikfshrbwbbgkesrazakxie/DisplayBrightness_Prefix.pch -c /Users/yene/Developer/Cocoa/DisplayBrightness/AppController.m -o /Users/yene/Developer/Cocoa/DisplayBrightness/build/DisplayBrightness.build/Release/DisplayBrightness.build/Objects-normal/x86_64/AppController.o0#
-
-CCompileC build/DisplayBrightness.build/Release/DisplayBrightness.build/Objects-normal/x86_64/DisplayBrightnessAppDelegate.o /Users/yene/Developer/Cocoa/DisplayBrightness/DisplayBrightnessAppDelegate.m normal x86_64 objective-c com.apple.compilers.gcc.4_2
-s282579534.882584
-e282579535.128219
-r1
-xCompileC
-xbuild/DisplayBrightness.build/Release/DisplayBrightness.build/Objects-normal/x86_64/DisplayBrightnessAppDelegate.o
-x/Users/yene/Developer/Cocoa/DisplayBrightness/DisplayBrightnessAppDelegate.m
-xnormal
-xx86_64
-xobjective-c
-xcom.apple.compilers.gcc.4_2
-o/Users/yene/Developer/Cocoa/DisplayBrightness/DisplayBrightnessAppDelegate.m:18: warning: incomplete implementation of class 'DisplayBrightnessAppDelegate'
-o/Users/yene/Developer/Cocoa/DisplayBrightness/DisplayBrightnessAppDelegate.m:18: warning: method definition for '-lockScreen:' not found
-lSLF07#2@84"Compile /Users/yene/Developer/Cocoa/DisplayBrightness/DisplayBrightnessAppDelegate.m282579534#282579535#0(293"/Users/yene/Developer/Cocoa/DisplayBrightness/DisplayBrightnessAppDelegate.m:18: warning: incomplete implementation of class 'DisplayBrightnessAppDelegate'/Users/yene/Developer/Cocoa/DisplayBrightness/DisplayBrightnessAppDelegate.m:18: warning: method definition for '-lockScreen:' not found2(22@65"Incomplete implementation of class 'DisplayBrightnessAppDelegate'282579534#0#156#0(6@76"/Users/yene/Developer/Cocoa/DisplayBrightness/DisplayBrightnessAppDelegate.m282571679#18#0#18#0#38"incomplete implementation of class '*'0(22@46"Method definition for '-lockScreen:' not found282579534#156#137#0(6@76"/Users/yene/Developer/Cocoa/DisplayBrightness/DisplayBrightnessAppDelegate.m282571679#18#0#18#0#35"method definition for '*' not found0(0#0#76"/Users/yene/Developer/Cocoa/DisplayBrightness/DisplayBrightnessAppDelegate.m4300885448#1811"    cd /Users/yene/Developer/Cocoa/DisplayBrightness    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x objective-c -arch x86_64 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -fasm-blocks -Os -mdynamic-no-pic -Wreturn-type -Wunused-variable -isysroot /Developer/SDKs/MacOSX10.6.sdk -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -iquote /Users/yene/Developer/Cocoa/DisplayBrightness/build/DisplayBrightness.build/Release/DisplayBrightness.build/DisplayBrightness-generated-files.hmap -I/Users/yene/Developer/Cocoa/DisplayBrightness/build/DisplayBrightness.build/Release/DisplayBrightness.build/DisplayBrightness-own-target-headers.hmap -I/Users/yene/Developer/Cocoa/DisplayBrightness/build/DisplayBrightness.build/Release/DisplayBrightness.build/DisplayBrightness-all-target-headers.hmap -iquote /Users/yene/Developer/Cocoa/DisplayBrightness/build/DisplayBrightness.build/Release/DisplayBrightness.build/DisplayBrightness-project-headers.hmap -F/Users/yene/Developer/Cocoa/DisplayBrightness/build/Release -I/Users/yene/Developer/Cocoa/DisplayBrightness/build/Release/include -I/Users/yene/Developer/Cocoa/DisplayBrightness/build/DisplayBrightness.build/Release/DisplayBrightness.build/DerivedSources/x86_64 -I/Users/yene/Developer/Cocoa/DisplayBrightness/build/DisplayBrightness.build/Release/DisplayBrightness.build/DerivedSources -include /var/folders/b3/b3MYUs28EtC-wbcaY1eLUU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/DisplayBrightness_Prefix-aiidzzikfshrbwbbgkesrazakxie/DisplayBrightness_Prefix.pch -c /Users/yene/Developer/Cocoa/DisplayBrightness/DisplayBrightnessAppDelegate.m -o /Users/yene/Developer/Cocoa/DisplayBrightness/build/DisplayBrightness.build/Release/DisplayBrightness.build/Objects-normal/x86_64/DisplayBrightnessAppDelegate.o0#
-
-CCompileC build/DisplayBrightness.build/Release/DisplayBrightness.build/Objects-normal/x86_64/main.o /Users/yene/Developer/Cocoa/DisplayBrightness/main.m normal x86_64 objective-c com.apple.compilers.gcc.4_2
-s282579534.881571
-e282579535.083664
-r1
-xCompileC
-xbuild/DisplayBrightness.build/Release/DisplayBrightness.build/Objects-normal/x86_64/main.o
-x/Users/yene/Developer/Cocoa/DisplayBrightness/main.m
-xnormal
-xx86_64
-xobjective-c
-xcom.apple.compilers.gcc.4_2
-lSLF07#2@60"Compile /Users/yene/Developer/Cocoa/DisplayBrightness/main.m282579534#282579535#0(0"0(0#0#52"/Users/yene/Developer/Cocoa/DisplayBrightness/main.m4300885448#1763"    cd /Users/yene/Developer/Cocoa/DisplayBrightness    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x objective-c -arch x86_64 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -fasm-blocks -Os -mdynamic-no-pic -Wreturn-type -Wunused-variable -isysroot /Developer/SDKs/MacOSX10.6.sdk -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -iquote /Users/yene/Developer/Cocoa/DisplayBrightness/build/DisplayBrightness.build/Release/DisplayBrightness.build/DisplayBrightness-generated-files.hmap -I/Users/yene/Developer/Cocoa/DisplayBrightness/build/DisplayBrightness.build/Release/DisplayBrightness.build/DisplayBrightness-own-target-headers.hmap -I/Users/yene/Developer/Cocoa/DisplayBrightness/build/DisplayBrightness.build/Release/DisplayBrightness.build/DisplayBrightness-all-target-headers.hmap -iquote /Users/yene/Developer/Cocoa/DisplayBrightness/build/DisplayBrightness.build/Release/DisplayBrightness.build/DisplayBrightness-project-headers.hmap -F/Users/yene/Developer/Cocoa/DisplayBrightness/build/Release -I/Users/yene/Developer/Cocoa/DisplayBrightness/build/Release/include -I/Users/yene/Developer/Cocoa/DisplayBrightness/build/DisplayBrightness.build/Release/DisplayBrightness.build/DerivedSources/x86_64 -I/Users/yene/Developer/Cocoa/DisplayBrightness/build/DisplayBrightness.build/Release/DisplayBrightness.build/DerivedSources -include /var/folders/b3/b3MYUs28EtC-wbcaY1eLUU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/DisplayBrightness_Prefix-aiidzzikfshrbwbbgkesrazakxie/DisplayBrightness_Prefix.pch -c /Users/yene/Developer/Cocoa/DisplayBrightness/main.m -o /Users/yene/Developer/Cocoa/DisplayBrightness/build/DisplayBrightness.build/Release/DisplayBrightness.build/Objects-normal/x86_64/main.o0#
-
-CCompileXIB /Users/yene/Developer/Cocoa/DisplayBrightness/English.lproj/MainMenu.xib
-s282673492.119205
-e282673503.376842
-r1
-xCompileXIB
-x/Users/yene/Developer/Cocoa/DisplayBrightness/English.lproj/MainMenu.xib
-lSLF07#2@37"CompileXIB English.lproj/MainMenu.xib282673492#282673503#0(0"0(0#0#72"/Users/yene/Developer/Cocoa/DisplayBrightness/English.lproj/MainMenu.xib4300885448#360"    cd /Users/yene/Developer/Cocoa/DisplayBrightness    /Developer/usr/bin/ibtool --errors --warnings --notices --output-format human-readable-text --compile /Users/yene/Developer/Cocoa/DisplayBrightness/build/Release/DisplayBrightness.app/Contents/Resources/English.lproj/MainMenu.nib /Users/yene/Developer/Cocoa/DisplayBrightness/English.lproj/MainMenu.xib0#
-
-CCopyStringsFile /Users/yene/Developer/Cocoa/DisplayBrightness/build/Release/DisplayBrightness.app/Contents/Resources/English.lproj/InfoPlist.strings English.lproj/InfoPlist.strings
-s282673491.982710
-e282673494.325201
-r1
-xCopyStringsFile
-x/Users/yene/Developer/Cocoa/DisplayBrightness/build/Release/DisplayBrightness.app/Contents/Resources/English.lproj/InfoPlist.strings
-xEnglish.lproj/InfoPlist.strings
-lSLF07#2@36"Copy English.lproj/InfoPlist.strings282673491#282673494#0(0"0(0#0#77"/Users/yene/Developer/Cocoa/DisplayBrightness/English.lproj/InfoPlist.strings4300885448#391"    cd /Users/yene/Developer/Cocoa/DisplayBrightness    setenv ICONV /usr/bin/iconv    /Developer/Library/Xcode/Plug-ins/CoreBuildTasks.xcplugin/Contents/Resources/copystrings --validate --inputencoding utf-8 --outputencoding UTF-16 English.lproj/InfoPlist.strings --outdir /Users/yene/Developer/Cocoa/DisplayBrightness/build/Release/DisplayBrightness.app/Contents/Resources/English.lproj0#
-
-CCpResource build/Release/DisplayBrightness.app/Contents/Resources/brightness_icon.icns brightness_icon.icns
-s282673494.328218
-e282673494.870869
-r1
-xCpResource
-xbuild/Release/DisplayBrightness.app/Contents/Resources/brightness_icon.icns
-xbrightness_icon.icns
-lSLF07#2@25"Copy brightness_icon.icns282673494#282673494#0(0"0(0#0#66"/Users/yene/Developer/Cocoa/DisplayBrightness/brightness_icon.icns4300885448#390"    cd /Users/yene/Developer/Cocoa/DisplayBrightness    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -strip-debug-symbols -resolve-src-symlinks /Users/yene/Developer/Cocoa/DisplayBrightness/brightness_icon.icns /Users/yene/Developer/Cocoa/DisplayBrightness/build/Release/DisplayBrightness.app/Contents/Resources0#
-
-CCpResource build/Release/DisplayBrightness.app/Contents/Resources/display_icon.png display_icon.png
-s282673494.326314
-e282673494.681860
-r1
-xCpResource
-xbuild/Release/DisplayBrightness.app/Contents/Resources/display_icon.png
-xdisplay_icon.png
-lSLF07#2@21"Copy display_icon.png282673494#282673494#0(0"0(0#0#62"/Users/yene/Developer/Cocoa/DisplayBrightness/display_icon.png4300885448#386"    cd /Users/yene/Developer/Cocoa/DisplayBrightness    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -strip-debug-symbols -resolve-src-symlinks /Users/yene/Developer/Cocoa/DisplayBrightness/display_icon.png /Users/yene/Developer/Cocoa/DisplayBrightness/build/Release/DisplayBrightness.app/Contents/Resources0#
-
-CCpResource build/Release/DisplayBrightness.app/Contents/Resources/display_icon_white.png display_icon_white.png
-s282673494.325431
-e282673494.601741
-r1
-xCpResource
-xbuild/Release/DisplayBrightness.app/Contents/Resources/display_icon_white.png
-xdisplay_icon_white.png
-lSLF07#2@27"Copy display_icon_white.png282673494#282673494#0(0"0(0#0#68"/Users/yene/Developer/Cocoa/DisplayBrightness/display_icon_white.png4300885448#392"    cd /Users/yene/Developer/Cocoa/DisplayBrightness    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -strip-debug-symbols -resolve-src-symlinks /Users/yene/Developer/Cocoa/DisplayBrightness/display_icon_white.png /Users/yene/Developer/Cocoa/DisplayBrightness/build/Release/DisplayBrightness.app/Contents/Resources0#
-
-CCreateUniversalBinary /Users/yene/Developer/Cocoa/DisplayBrightness/build/Release/DisplayBrightness.app/Contents/MacOS/DisplayBrightness normal "x86_64 i386 ppc"
-s282673555.354367
-e282673555.588208
-r1
-xCreateUniversalBinary
-x/Users/yene/Developer/Cocoa/DisplayBrightness/build/Release/DisplayBrightness.app/Contents/MacOS/DisplayBrightness
-xnormal
-xx86_64 i386 ppc
-lSLF07#2@115"CreateUniversalBinary build/Release/DisplayBrightness.app/Contents/MacOS/DisplayBrightness normal "x86_64 i386 ppc"282673555#282673555#0(0"0(0#0#61"/Users/yene/Developer/Cocoa/DisplayBrightness/x86_64 i386 ppc4300885448#641"    cd /Users/yene/Developer/Cocoa/DisplayBrightness    /usr/bin/lipo -create /Users/yene/Developer/Cocoa/DisplayBrightness/build/DisplayBrightness.build/Release/DisplayBrightness.build/Objects-normal/x86_64/DisplayBrightness /Users/yene/Developer/Cocoa/DisplayBrightness/build/DisplayBrightness.build/Release/DisplayBrightness.build/Objects-normal/i386/DisplayBrightness /Users/yene/Developer/Cocoa/DisplayBrightness/build/DisplayBrightness.build/Release/DisplayBrightness.build/Objects-normal/ppc/DisplayBrightness -output /Users/yene/Developer/Cocoa/DisplayBrightness/build/Release/DisplayBrightness.app/Contents/MacOS/DisplayBrightness0#
-
-CGenerateDSYMFile /Users/yene/Developer/Cocoa/DisplayBrightness/build/Release/DisplayBrightness.app.dSYM /Users/yene/Developer/Cocoa/DisplayBrightness/build/Release/DisplayBrightness.app/Contents/MacOS/DisplayBrightness
-s282673555.588417
-e282673556.213764
-r1
-xGenerateDSYMFile
-x/Users/yene/Developer/Cocoa/DisplayBrightness/build/Release/DisplayBrightness.app.dSYM
-x/Users/yene/Developer/Cocoa/DisplayBrightness/build/Release/DisplayBrightness.app/Contents/MacOS/DisplayBrightness
-lSLF07#2@126"GenerateDSYMFile build/Release/DisplayBrightness.app.dSYM build/Release/DisplayBrightness.app/Contents/MacOS/DisplayBrightness282673555#282673556#0(0"0(0#0#114"/Users/yene/Developer/Cocoa/DisplayBrightness/build/Release/DisplayBrightness.app/Contents/MacOS/DisplayBrightness4300885448#290"    cd /Users/yene/Developer/Cocoa/DisplayBrightness    /Developer/usr/bin/dsymutil /Users/yene/Developer/Cocoa/DisplayBrightness/build/Release/DisplayBrightness.app/Contents/MacOS/DisplayBrightness -o /Users/yene/Developer/Cocoa/DisplayBrightness/build/Release/DisplayBrightness.app.dSYM0#
-
-CLd /Users/yene/Developer/Cocoa/DisplayBrightness/build/DisplayBrightness.build/Release/DisplayBrightness.build/Objects-normal/i386/DisplayBrightness normal i386
-s282673536.029345
-e282673538.474716
-r1
-xLd
-x/Users/yene/Developer/Cocoa/DisplayBrightness/build/DisplayBrightness.build/Release/DisplayBrightness.build/Objects-normal/i386/DisplayBrightness
-xnormal
-xi386
-lSLF07#2@150"Link /Users/yene/Developer/Cocoa/DisplayBrightness/build/DisplayBrightness.build/Release/DisplayBrightness.build/Objects-normal/i386/DisplayBrightness282673536#282673538#0(0"0(0#0#0"4300885448#679"    cd /Users/yene/Developer/Cocoa/DisplayBrightness    setenv MACOSX_DEPLOYMENT_TARGET 10.6    /Developer/usr/bin/gcc-4.2 -arch i386 -isysroot /Developer/SDKs/MacOSX10.6.sdk -L/Users/yene/Developer/Cocoa/DisplayBrightness/build/Release -F/Users/yene/Developer/Cocoa/DisplayBrightness/build/Release -filelist /Users/yene/Developer/Cocoa/DisplayBrightness/build/DisplayBrightness.build/Release/DisplayBrightness.build/Objects-normal/i386/DisplayBrightness.LinkFileList -mmacosx-version-min=10.6 -framework Cocoa -framework IOKit -o /Users/yene/Developer/Cocoa/DisplayBrightness/build/DisplayBrightness.build/Release/DisplayBrightness.build/Objects-normal/i386/DisplayBrightness0#
-
-CLd /Users/yene/Developer/Cocoa/DisplayBrightness/build/DisplayBrightness.build/Release/DisplayBrightness.build/Objects-normal/ppc/DisplayBrightness normal ppc
-s282673553.948064
-e282673555.354257
-r1
-xLd
-x/Users/yene/Developer/Cocoa/DisplayBrightness/build/DisplayBrightness.build/Release/DisplayBrightness.build/Objects-normal/ppc/DisplayBrightness
-xnormal
-xppc
-lSLF07#2@149"Link /Users/yene/Developer/Cocoa/DisplayBrightness/build/DisplayBrightness.build/Release/DisplayBrightness.build/Objects-normal/ppc/DisplayBrightness282673553#282673555#0(0"0(0#0#0"4300885448#676"    cd /Users/yene/Developer/Cocoa/DisplayBrightness    setenv MACOSX_DEPLOYMENT_TARGET 10.6    /Developer/usr/bin/gcc-4.2 -arch ppc -isysroot /Developer/SDKs/MacOSX10.6.sdk -L/Users/yene/Developer/Cocoa/DisplayBrightness/build/Release -F/Users/yene/Developer/Cocoa/DisplayBrightness/build/Release -filelist /Users/yene/Developer/Cocoa/DisplayBrightness/build/DisplayBrightness.build/Release/DisplayBrightness.build/Objects-normal/ppc/DisplayBrightness.LinkFileList -mmacosx-version-min=10.6 -framework Cocoa -framework IOKit -o /Users/yene/Developer/Cocoa/DisplayBrightness/build/DisplayBrightness.build/Release/DisplayBrightness.build/Objects-normal/ppc/DisplayBrightness0#
-
-CLd /Users/yene/Developer/Cocoa/DisplayBrightness/build/DisplayBrightness.build/Release/DisplayBrightness.build/Objects-normal/x86_64/DisplayBrightness normal x86_64
-s282673510.975690
-e282673523.424875
-r1
-xLd
-x/Users/yene/Developer/Cocoa/DisplayBrightness/build/DisplayBrightness.build/Release/DisplayBrightness.build/Objects-normal/x86_64/DisplayBrightness
-xnormal
-xx86_64
-lSLF07#2@152"Link /Users/yene/Developer/Cocoa/DisplayBrightness/build/DisplayBrightness.build/Release/DisplayBrightness.build/Objects-normal/x86_64/DisplayBrightness282673510#282673523#0(0"0(0#0#0"4300885448#685"    cd /Users/yene/Developer/Cocoa/DisplayBrightness    setenv MACOSX_DEPLOYMENT_TARGET 10.6    /Developer/usr/bin/gcc-4.2 -arch x86_64 -isysroot /Developer/SDKs/MacOSX10.6.sdk -L/Users/yene/Developer/Cocoa/DisplayBrightness/build/Release -F/Users/yene/Developer/Cocoa/DisplayBrightness/build/Release -filelist /Users/yene/Developer/Cocoa/DisplayBrightness/build/DisplayBrightness.build/Release/DisplayBrightness.build/Objects-normal/x86_64/DisplayBrightness.LinkFileList -mmacosx-version-min=10.6 -framework Cocoa -framework IOKit -o /Users/yene/Developer/Cocoa/DisplayBrightness/build/DisplayBrightness.build/Release/DisplayBrightness.build/Objects-normal/x86_64/DisplayBrightness0#
-
-CProcessInfoPlistFile /Users/yene/Developer/Cocoa/DisplayBrightness/build/Release/DisplayBrightness.app/Contents/Info.plist DisplayBrightness-Info.plist
-s282673491.741239
-e282673491.982443
-r1
-xProcessInfoPlistFile
-x/Users/yene/Developer/Cocoa/DisplayBrightness/build/Release/DisplayBrightness.app/Contents/Info.plist
-xDisplayBrightness-Info.plist
-lSLF07#2@36"Process DisplayBrightness-Info.plist282673491#282673491#0(0"0(0#0#74"/Users/yene/Developer/Cocoa/DisplayBrightness/DisplayBrightness-Info.plist18859025310417008#365"    cd /Users/yene/Developer/Cocoa/DisplayBrightness    builtin-infoPlistUtility DisplayBrightness-Info.plist -genpkginfo /Users/yene/Developer/Cocoa/DisplayBrightness/build/Release/DisplayBrightness.app/Contents/PkgInfo -expandbuildsettings -platform macosx -o /Users/yene/Developer/Cocoa/DisplayBrightness/build/Release/DisplayBrightness.app/Contents/Info.plist0#
-
-CProcessPCH /var/folders/b3/b3MYUs28EtC-wbcaY1eLUU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/DisplayBrightness_Prefix-aiidzzikfshrbwbbgkesrazakxie/DisplayBrightness_Prefix.pch.gch DisplayBrightness_Prefix.pch normal x86_64 objective-c com.apple.compilers.gcc.4_2
-s282579523.812795
-e282579530.679481
-r1
-xProcessPCH
-x/var/folders/b3/b3MYUs28EtC-wbcaY1eLUU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/DisplayBrightness_Prefix-aiidzzikfshrbwbbgkesrazakxie/DisplayBrightness_Prefix.pch.gch
-xDisplayBrightness_Prefix.pch
-xnormal
-xx86_64
-xobjective-c
-xcom.apple.compilers.gcc.4_2
-lSLF07#2@39"Precompile DisplayBrightness_Prefix.pch282579523#282579530#0(0"0(0#0#74"/Users/yene/Developer/Cocoa/DisplayBrightness/DisplayBrightness_Prefix.pch4300885448#1650"    cd /Users/yene/Developer/Cocoa/DisplayBrightness    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x objective-c-header -arch x86_64 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -fasm-blocks -Os -mdynamic-no-pic -Wreturn-type -Wunused-variable -isysroot /Developer/SDKs/MacOSX10.6.sdk -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -iquote /Users/yene/Developer/Cocoa/DisplayBrightness/build/DisplayBrightness.build/Release/DisplayBrightness.build/DisplayBrightness-generated-files.hmap -I/Users/yene/Developer/Cocoa/DisplayBrightness/build/DisplayBrightness.build/Release/DisplayBrightness.build/DisplayBrightness-own-target-headers.hmap -I/Users/yene/Developer/Cocoa/DisplayBrightness/build/DisplayBrightness.build/Release/DisplayBrightness.build/DisplayBrightness-all-target-headers.hmap -iquote /Users/yene/Developer/Cocoa/DisplayBrightness/build/DisplayBrightness.build/Release/DisplayBrightness.build/DisplayBrightness-project-headers.hmap -F/Users/yene/Developer/Cocoa/DisplayBrightness/build/Release -I/Users/yene/Developer/Cocoa/DisplayBrightness/build/Release/include -I/Users/yene/Developer/Cocoa/DisplayBrightness/build/DisplayBrightness.build/Release/DisplayBrightness.build/DerivedSources/x86_64 -I/Users/yene/Developer/Cocoa/DisplayBrightness/build/DisplayBrightness.build/Release/DisplayBrightness.build/DerivedSources -c /Users/yene/Developer/Cocoa/DisplayBrightness/DisplayBrightness_Prefix.pch -o /var/folders/b3/b3MYUs28EtC-wbcaY1eLUU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/DisplayBrightness_Prefix-aiidzzikfshrbwbbgkesrazakxie/DisplayBrightness_Prefix.pch.gch0#
-
-CProcessPCH /var/folders/b3/b3MYUs28EtC-wbcaY1eLUU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/DisplayBrightness_Prefix-fhfuqsdkdkluebggydwnzvwovfpd/DisplayBrightness_Prefix.pch.gch DisplayBrightness_Prefix.pch normal i386 objective-c com.apple.compilers.gcc.4_2
-s282579523.813832
-e282579531.525006
-r1
-xProcessPCH
-x/var/folders/b3/b3MYUs28EtC-wbcaY1eLUU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/DisplayBrightness_Prefix-fhfuqsdkdkluebggydwnzvwovfpd/DisplayBrightness_Prefix.pch.gch
-xDisplayBrightness_Prefix.pch
-xnormal
-xi386
-xobjective-c
-xcom.apple.compilers.gcc.4_2
-lSLF07#2@39"Precompile DisplayBrightness_Prefix.pch282579523#282579531#0(0"0(0#0#74"/Users/yene/Developer/Cocoa/DisplayBrightness/DisplayBrightness_Prefix.pch4300885448#1646"    cd /Users/yene/Developer/Cocoa/DisplayBrightness    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x objective-c-header -arch i386 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -fasm-blocks -Os -mdynamic-no-pic -Wreturn-type -Wunused-variable -isysroot /Developer/SDKs/MacOSX10.6.sdk -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -iquote /Users/yene/Developer/Cocoa/DisplayBrightness/build/DisplayBrightness.build/Release/DisplayBrightness.build/DisplayBrightness-generated-files.hmap -I/Users/yene/Developer/Cocoa/DisplayBrightness/build/DisplayBrightness.build/Release/DisplayBrightness.build/DisplayBrightness-own-target-headers.hmap -I/Users/yene/Developer/Cocoa/DisplayBrightness/build/DisplayBrightness.build/Release/DisplayBrightness.build/DisplayBrightness-all-target-headers.hmap -iquote /Users/yene/Developer/Cocoa/DisplayBrightness/build/DisplayBrightness.build/Release/DisplayBrightness.build/DisplayBrightness-project-headers.hmap -F/Users/yene/Developer/Cocoa/DisplayBrightness/build/Release -I/Users/yene/Developer/Cocoa/DisplayBrightness/build/Release/include -I/Users/yene/Developer/Cocoa/DisplayBrightness/build/DisplayBrightness.build/Release/DisplayBrightness.build/DerivedSources/i386 -I/Users/yene/Developer/Cocoa/DisplayBrightness/build/DisplayBrightness.build/Release/DisplayBrightness.build/DerivedSources -c /Users/yene/Developer/Cocoa/DisplayBrightness/DisplayBrightness_Prefix.pch -o /var/folders/b3/b3MYUs28EtC-wbcaY1eLUU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/DisplayBrightness_Prefix-fhfuqsdkdkluebggydwnzvwovfpd/DisplayBrightness_Prefix.pch.gch0#
-
-CProcessPCH /var/folders/b3/b3MYUs28EtC-wbcaY1eLUU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/DisplayBrightness_Prefix-fidffugynrguoaccivrjzcjhfaqw/DisplayBrightness_Prefix.pch.gch DisplayBrightness_Prefix.pch normal ppc objective-c com.apple.compilers.gcc.4_2
-s282579530.679733
-e282579534.881342
-r1
-xProcessPCH
-x/var/folders/b3/b3MYUs28EtC-wbcaY1eLUU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/DisplayBrightness_Prefix-fidffugynrguoaccivrjzcjhfaqw/DisplayBrightness_Prefix.pch.gch
-xDisplayBrightness_Prefix.pch
-xnormal
-xppc
-xobjective-c
-xcom.apple.compilers.gcc.4_2
-lSLF07#2@39"Precompile DisplayBrightness_Prefix.pch282579530#282579534#0(0"0(0#0#74"/Users/yene/Developer/Cocoa/DisplayBrightness/DisplayBrightness_Prefix.pch4300885448#1641"    cd /Users/yene/Developer/Cocoa/DisplayBrightness    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x objective-c-header -arch ppc -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -Os -mdynamic-no-pic -Wreturn-type -Wunused-variable -isysroot /Developer/SDKs/MacOSX10.6.sdk -mtune=G5 -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -iquote /Users/yene/Developer/Cocoa/DisplayBrightness/build/DisplayBrightness.build/Release/DisplayBrightness.build/DisplayBrightness-generated-files.hmap -I/Users/yene/Developer/Cocoa/DisplayBrightness/build/DisplayBrightness.build/Release/DisplayBrightness.build/DisplayBrightness-own-target-headers.hmap -I/Users/yene/Developer/Cocoa/DisplayBrightness/build/DisplayBrightness.build/Release/DisplayBrightness.build/DisplayBrightness-all-target-headers.hmap -iquote /Users/yene/Developer/Cocoa/DisplayBrightness/build/DisplayBrightness.build/Release/DisplayBrightness.build/DisplayBrightness-project-headers.hmap -F/Users/yene/Developer/Cocoa/DisplayBrightness/build/Release -I/Users/yene/Developer/Cocoa/DisplayBrightness/build/Release/include -I/Users/yene/Developer/Cocoa/DisplayBrightness/build/DisplayBrightness.build/Release/DisplayBrightness.build/DerivedSources/ppc -I/Users/yene/Developer/Cocoa/DisplayBrightness/build/DisplayBrightness.build/Release/DisplayBrightness.build/DerivedSources -c /Users/yene/Developer/Cocoa/DisplayBrightness/DisplayBrightness_Prefix.pch -o /var/folders/b3/b3MYUs28EtC-wbcaY1eLUU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/DisplayBrightness_Prefix-fidffugynrguoaccivrjzcjhfaqw/DisplayBrightness_Prefix.pch.gch0#
-
-CTouch /Users/yene/Developer/Cocoa/DisplayBrightness/build/Release/DisplayBrightness.app
-s282673556.213853
-e282673556.270075
-r1
-xTouch
-x/Users/yene/Developer/Cocoa/DisplayBrightness/build/Release/DisplayBrightness.app
-lSLF07#2@87"Touch /Users/yene/Developer/Cocoa/DisplayBrightness/build/Release/DisplayBrightness.app282673556#282673556#0(0"0(0#0#0"4300885448#157"    cd /Users/yene/Developer/Cocoa/DisplayBrightness    /usr/bin/touch -c /Users/yene/Developer/Cocoa/DisplayBrightness/build/Release/DisplayBrightness.app0#
-
