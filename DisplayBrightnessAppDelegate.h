@@ -14,4 +14,8 @@
 
 @property (unsafe_unretained) IBOutlet NSWindow *window;
 
+- (float)getDisplayBrightness;
+- (void)setDisplayBrightness:(float)brightness;
+- (void)addQuitMenu;
+
 @end

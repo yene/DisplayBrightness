@@ -19,3 +19,4 @@ Right click the menu bar app.
 ## Learned
 * Menu bar images max height is 21px, retina 41px. 15px height looks best.
 * I use 18px image with 15px content.
+* NSApplicationMain loads the main nib.
