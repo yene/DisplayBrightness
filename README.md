@@ -16,10 +16,6 @@ Right click the menu bar app.
 * code cleanup
 * update loginitem to sierra
 
-## notes
-maybe move code into applicationdidfinish
-http://www.swiftvideotutorials.com/creating-menubar-apps-osx
-
 ## Learned
 * Menu bar images max height is 21px, retina 41px. 15px height looks best.
 * I use 18px image with 15px content.

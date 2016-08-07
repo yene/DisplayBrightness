@@ -18,6 +18,7 @@
 		AE56263010D7B4ED00AF143D /* icon_white.png in Resources */ = {isa = PBXBuildFile; fileRef = AE56262D10D7B4ED00AF143D /* icon_white.png */; };
 		AE56263110D7B4ED00AF143D /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = AE56262E10D7B4ED00AF143D /* icon.png */; };
 		AE56263210D7B4ED00AF143D /* brightness_icon.icns in Resources */ = {isa = PBXBuildFile; fileRef = AE56262F10D7B4ED00AF143D /* brightness_icon.icns */; };
+		AE831C921D57932100A60758 /* NSSlider+Scrollwheel.m in Sources */ = {isa = PBXBuildFile; fileRef = AE831C911D57932100A60758 /* NSSlider+Scrollwheel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,8 @@
 		AE56262D10D7B4ED00AF143D /* icon_white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_white.png; sourceTree = "<group>"; };
 		AE56262E10D7B4ED00AF143D /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
 		AE56262F10D7B4ED00AF143D /* brightness_icon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = brightness_icon.icns; sourceTree = "<group>"; };
+		AE831C911D57932100A60758 /* NSSlider+Scrollwheel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSSlider+Scrollwheel.m"; sourceTree = "<group>"; };
+		AE831C931D57933900A60758 /* NSSlider+Scrollwheel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSSlider+Scrollwheel.h"; sourceTree = "<group>"; };
 		AEA4EF901CF8624200A60758 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -65,6 +68,8 @@
 				256AC3D90F4B6AC300CF3369 /* DisplayBrightnessAppDelegate.m */,
 				AE56261610D7B37A00AF143D /* AppController.h */,
 				AE56261710D7B37A00AF143D /* AppController.m */,
+				AE831C931D57933900A60758 /* NSSlider+Scrollwheel.h */,
+				AE831C911D57932100A60758 /* NSSlider+Scrollwheel.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -213,6 +218,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AE831C921D57932100A60758 /* NSSlider+Scrollwheel.m in Sources */,
 				8D11072D0486CEB800E47090 /* main.m in Sources */,
 				256AC3DA0F4B6AC300CF3369 /* DisplayBrightnessAppDelegate.m in Sources */,
 				AE56261810D7B37A00AF143D /* AppController.m in Sources */,
