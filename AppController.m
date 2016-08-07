@@ -1,10 +1,3 @@
-//
-//  AppController.m
-//  DisplayBrightness
-//
-//  Created by Yannick Weiss on 15.12.09.
-//  Copyright 2009 yannickweiss.com. All rights reserved.
-//
 
 #import "AppController.h"
 #include <stdio.h>
@@ -37,8 +30,7 @@
 @end
 
 @implementation AppController {
-	NSSlider *slider;
-	NSStatusItem	*brightnessItem;
+	NSStatusItem *brightnessItem;
 }
 
 - (void)awakeFromNib {
@@ -88,9 +80,9 @@
 		[brightnessItem.menu addItem:menuItem];
 	} else {
 		NSRect size = NSMakeRect(0,0,30,104);
-		slider = [[NSSlider alloc] initWithFrame:size];
+		NSSlider *slider = [[NSSlider alloc] initWithFrame:size];
 		[slider setTarget:self];
-		[slider setAction:@selector(sliderAction)];
+		[slider setAction:@selector(sliderAction:)];
 		[slider setMaxValue:1.0];
 		[slider setMinValue:0.01]; // 0 would turn the display black
 		[slider setFloatValue:br];
@@ -104,8 +96,8 @@
 	brightnessItem.menu = nil;
 }
 
-- (void)sliderAction {
-	[self setDisplayBrightness:[slider floatValue]];
+- (void)sliderAction:(id)sender {
+	[self setDisplayBrightness:[sender floatValue]];
 }
 
 - (void)setDisplayBrightness:(float)brightness {
@@ -276,8 +268,6 @@ static io_service_t IOServicePortFromCGDisplayID(CGDirectDisplayID displayID) {
 
 - (void)addQuitMenu {
 	NSMenu *menu = [[NSMenu alloc] init];
-	
-	
 	NSString *appPath = [[NSBundle mainBundle] bundlePath];
 	NSMenuItem *menuItem = [[NSMenuItem alloc] init];
 	menuItem.title = NSLocalizedString(@"Launch at startup", nil); // Launch at startup
@@ -307,10 +297,6 @@ static io_service_t IOServicePortFromCGDisplayID(CGDirectDisplayID displayID) {
 	[NSApp terminate:self];
 }
 
-- (void)qui2t {
-	[NSApp terminate:self];
-}
-
 @end
 
 @interface NSStatusBarButton (NSStatusBarButtonQuit)
@@ -321,4 +307,8 @@ static io_service_t IOServicePortFromCGDisplayID(CGDirectDisplayID displayID) {
 - (void)rightMouseDown:(NSEvent *)event {
 	[self.target performSelector:@selector(addQuitMenu) withObject:nil];
 }
+- (void)scrollWheel:(NSEvent *)theEvent {
+	[self.target performSelector:@selector(openMenu) withObject:nil];
+}
+
 @end

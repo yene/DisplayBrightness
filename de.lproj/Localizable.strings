@@ -1,10 +1,3 @@
-/* 
-  Localizable.strings
-  DisplayBrightness
-
-  Created by Yannick Weiss on 21/11/15.
-
-*/
 
 "ToolTip" = "Ändere die Display Helligkeit mit dem Slider.";
 "AlertTitel" = "Beim Start des Rechners öffnen?";

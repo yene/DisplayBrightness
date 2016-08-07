@@ -8,6 +8,18 @@ Control your Macbook display brightness from the Menubar.
 Right click the menu bar app.
 
 ## Todo
+* find better icon (free)
+	* test application icon seems not look nice when selected.
+	* test dark ui move
+	* menubar icon size can be up to 18px
+	* improve dark menubar support (low prio)
 * code cleanup
-* check sendActionOn
-* application icon seems not look nice when selected.
+* update loginitem to sierra
+
+## notes
+maybe move code into applicationdidfinish
+http://www.swiftvideotutorials.com/creating-menubar-apps-osx
+
+## Learned
+* Menu bar images max height is 21px, retina 41px. 15px height looks best.
+* I use 18px image with 15px content.
